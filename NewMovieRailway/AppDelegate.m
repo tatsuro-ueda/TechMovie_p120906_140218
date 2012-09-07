@@ -167,17 +167,14 @@
 #ifdef CAT
         [[NSUserDefaults standardUserDefaults] setObject:@"猫" forKey:@"keyword0"];
         [[NSUserDefaults standardUserDefaults] setObject:@"cat" forKey:@"keyword1"];
-        NSLog(@"cat");
 #endif
 #ifdef MILITARY
         [[NSUserDefaults standardUserDefaults] setObject:@"軍事" forKey:@"keyword0"];
         [[NSUserDefaults standardUserDefaults] setObject:@"military" forKey:@"keyword1"];
-        NSLog(@"military");
 #endif
 #ifdef RAILWAY
         [[NSUserDefaults standardUserDefaults] setObject:@"鉄道" forKey:@"keyword0"];
         [[NSUserDefaults standardUserDefaults] setObject:@"railway" forKey:@"keyword1"];
-        NSLog(@"railway");
 #endif
         
         // ユーザーキーワードペア配列を準備する
