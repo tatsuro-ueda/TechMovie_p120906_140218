@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <iAd/iAd.h>
+@class RSSParser;
 
 @interface FeedsTableViewController : UITableViewController<UITableViewDelegate, UITableViewDataSource, ADBannerViewDelegate, UIAlertViewDelegate>
 {
@@ -15,9 +16,13 @@
     NSMutableArray  *_ogImages;
     NSMutableArray  *_bkmImages;
     UIProgressView  *_progressView;
-    UIAlertView     *_alertView;
+    UIAlertView     *_progressAlertView;
     NSOperationQueue *_queue;
     UIAlertView     *_alertViewInvitation;
+    NSTimer         *_timerIncrease;
+    NSTimer         *_timerDecrease;
+    RSSParser       *_parser;
+    UIAlertView     *_infoAlertView;
 }
 // リストに表示するアイテムを格納する配列
 // 各要素は「RSSEntry」クラスのインスタンスとする
@@ -33,5 +38,6 @@
 
 - (IBAction)showSetting:(id)sender;
 - (IBAction)refresh:(id)sender;
+- (IBAction)showInfo:(id)sender;
 
 @end

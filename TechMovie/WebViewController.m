@@ -33,7 +33,17 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    [self.webView loadRequest:[NSURLRequest requestWithURL:self.URLForSegue]];
+    @try {
+        [self.webView loadRequest:[NSURLRequest requestWithURL:self.URLForSegue]];
+    }
+    @catch (NSException *exception) {
+        _alert = [[UIAlertView alloc] init];
+        _alert.title = [NSString stringWithFormat:@"エラー"];
+        _alert.message = [NSString stringWithFormat:@"%@", exception.description];
+        _alert.delegate = self;
+        [_alert addButtonWithTitle:@"OK"];
+        [_alert show];
+    }
     
     // Google Analytics
     NSString *trackPageTitle = [NSString stringWithFormat:@"%@", self.URLForSegue];
@@ -103,5 +113,14 @@
         self.adView.hidden = YES;
     }
 }
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (alertView == _alert)
+    {
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+}
+
 
 @end

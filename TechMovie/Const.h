@@ -8,3 +8,9 @@
 
 extern NSString* const PresetKeywordPairsDat;
 extern NSString* const UserKeywordPairsDat;
+
+extern NSString* const FirstAlertFree;
+extern NSString* const FirstAlertPayed;
+
+extern NSString* const InfoPayed;
+extern NSString* const URLPayed;

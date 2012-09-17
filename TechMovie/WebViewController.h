@@ -10,6 +10,9 @@
 #import <iAd/iAd.h>
 
 @interface WebViewController : UIViewController<UIWebViewDelegate, ADBannerViewDelegate>
+{
+    UIAlertView     *_alert;
+}
 
 @property (strong, nonatomic) IBOutlet UIWebView *webView;
 @property NSURL *URLForSegue;

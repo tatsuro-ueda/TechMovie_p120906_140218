@@ -14,9 +14,12 @@
 #import "AFJSONRequestOperation.h"
 #import "UIImage+GIF.h"
 #import "GANTracker.h"
+#import "Const.h"
 
-const NSString *kStrURLPipesWith2Keywords = @"http://pipes.yahoo.com/pipes/pipe.run?_id=d6736f52235d6c16befbf95d7320fd1e&_render=rss";
-const NSString *kStrURLPipesWith1Keyword = @"http://pipes.yahoo.com/pipes/pipe.run?_id=6adb7c2f4644af358fbe273293c80e43&_render=rss";
+#define TEST
+
+const NSString *kStrURLPipesWith2Keywords = @"http://p120908-new-movies-server.herokuapp.com/new_movie?";
+const NSString *kStrURLPipesWith1Keyword = @"http://p120908-new-movies-server.herokuapp.com/new_movie?";
 
 // リストアイテムのソート用関数
 // 日付の降順ソートで使用する
@@ -132,16 +135,21 @@ static NSInteger dateDescending(id item1, id item2, void *context)
     [self reloadNavBarTitleWithString:keywordPlainString0];
     
     // 「読込中」のアラートビューを表示する
-    _alertView = [[UIAlertView alloc] initWithTitle:@"読み込んでいます"
+    _progressAlertView = [[UIAlertView alloc] initWithTitle:@"読み込んでいます"
                                                         message:@"\n\n"
                                                        delegate:self
                                               cancelButtonTitle:@"キャンセル"
                                               otherButtonTitles:nil];
     _progressView = [[UIProgressView alloc]
                      initWithFrame:CGRectMake(30.0f, 60.0f, 225.0f, 90.0f)];
-    [_alertView addSubview:_progressView];
+    [_progressAlertView addSubview:_progressView];
     [_progressView setProgressViewStyle: UIProgressViewStyleBar];
-    [_alertView show];
+    _timerIncrease = [NSTimer scheduledTimerWithTimeInterval:0.05
+                                                      target:self
+                                                    selector:@selector(increaseProgressBar)
+                                                    userInfo:nil
+                                                     repeats:YES];
+    [_progressAlertView show];
     
     NSBlockOperation *operation = [[NSBlockOperation alloc] init];
     weakOperation = operation;
@@ -155,13 +163,16 @@ static NSInteger dateDescending(id item1, id item2, void *context)
         NSString *myPipeURLString;
         if ([keywordPlainString1 isEqualToString:@""]) {
             myPipeURLString =
-            [NSString stringWithFormat:@"%@&tag=%@", kStrURLPipesWith1Keyword, escapedUrlString0];
+            [NSString stringWithFormat:@"%@&tag1=%@", kStrURLPipesWith1Keyword, escapedUrlString0];
         }
         else{
             escapedUrlString1 = [keywordPlainString1 stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
             myPipeURLString =
-            [NSString stringWithFormat:@"%@&tag0=%@&tag1=%@", kStrURLPipesWith2Keywords, escapedUrlString0, escapedUrlString1];
+            [NSString stringWithFormat:@"%@&tag1=%@&tag2=%@", kStrURLPipesWith2Keywords, escapedUrlString0, escapedUrlString1];
         }
+#ifdef TEST
+        NSLog(@"%@", myPipeURLString);
+#endif
         
         // urlArrayをつくる
         NSArray *urls = [NSArray arrayWithObject:myPipeURLString];
@@ -208,7 +219,8 @@ static NSInteger dateDescending(id item1, id item2, void *context)
              * 検索結果を整えて表示する
              */
             // テーブル更新
-            [_alertView dismissWithClickedButtonIndex:0 animated:YES];
+            [_timerIncrease invalidate];
+            [_progressAlertView dismissWithClickedButtonIndex:0 animated:YES];
             [self.tableView reloadData];
             
             // テーブルの一番上へ
@@ -390,13 +402,13 @@ static NSInteger dateDescending(id item1, id item2, void *context)
 - (NSArray *)itemsArrayFromContentsOfURL:(NSURL *)url fileName:(NSString *)fileName performer:(id)performer
 {
     NSMutableArray *newArray = [NSMutableArray arrayWithCapacity:0];
-    RSSParser *parser = [[RSSParser alloc] init];
+    _parser = [[RSSParser alloc] init];
     
     // URLから読み込む
-    if ([parser parseContentsOfURL:url progressView:_progressView fileName:fileName performer:performer]) {
+    if ([_parser parseContentsOfURL:url progressView:_progressView fileName:fileName performer:performer]) {
         
         // 記事を読み込む
-        [newArray addObjectsFromArray:[parser entries]];
+        [newArray addObjectsFromArray:[_parser entries]];
     }
     
     return newArray;
@@ -496,6 +508,17 @@ static NSInteger dateDescending(id item1, id item2, void *context)
     [self requestTableData];
 }
 
+- (IBAction)showInfo:(id)sender {
+    _infoAlertView = [[UIAlertView alloc] init];
+    _infoAlertView.title = [NSString stringWithFormat:@"ご案内"];
+    _infoAlertView.message = InfoPayed;
+    _infoAlertView.delegate = self;
+    [_infoAlertView addButtonWithTitle:@"アプリを見る"];
+    [_infoAlertView addButtonWithTitle:@"キャンセル"];
+    [_infoAlertView show];
+
+}
+
 - (BOOL)bannerViewActionShouldBegin:(ADBannerView *)banner willLeaveApplication:(BOOL)willLeave
 {
     return YES;
@@ -517,8 +540,11 @@ static NSInteger dateDescending(id item1, id item2, void *context)
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    if (alertView == _alertView) {
+    if (alertView == _progressAlertView) {
         [weakOperation cancel];
+    }
+    else if (alertView == _infoAlertView && buttonIndex == 0) {
+        [[UIApplication sharedApplication] openURL: [NSURL URLWithString:URLPayed]];
     }
 }
 
@@ -533,7 +559,35 @@ static NSInteger dateDescending(id item1, id item2, void *context)
 
 -(void)increaseProgressBar
 {
-    _progressView.progress += 0.002;
+    float progress = _progressView.progress;
+    if (progress < 0.9) {
+        _progressView.progress += 0.001;
+    }
+    else
+    {
+        [_timerIncrease invalidate];
+        // 90%になったら、サーバーからの返答の有無を10秒後に判断する
+        [self performSelector:@selector(judgeServerAlive) withObject:nil afterDelay:20.0];
+    }
 }
 
+- (void)judgeServerAlive
+{
+    // もしまったく応答がなければあきらめる
+    if (_parser.realProgress == 0) {
+        _progressView.progress = 0.0;
+        [_timerDecrease invalidate];
+        [_progressAlertView dismissWithClickedButtonIndex:0 animated:YES];
+        
+        UIAlertView *alertView = [[UIAlertView alloc] init];
+        alertView.title = @"ネットワークに問題があります。場所を変えるなどして再度お試しください。";
+        alertView.message = nil;
+        alertView.delegate = self;
+        [alertView addButtonWithTitle:@"了解"];
+        [alertView show];
+
+        [weakOperation cancel];
+    }
+    // さもなくば残りの情報を待つ
+}
 @end

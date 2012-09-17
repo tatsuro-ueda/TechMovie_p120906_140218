@@ -65,9 +65,20 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <adBannerView key="tableHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="tBb-Qc-Mpg">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            <requiredContentSizeIdentifiers>
+                                <string>ADBannerContentSizeLandscape</string>
+                                <string>ADBannerContentSizePortrait</string>
+                            </requiredContentSizeIdentifiers>
+                            <connections>
+                                <outlet property="delegate" destination="YV9-Ku-PBf" id="KCI-Zn-dSc"/>
+                            </connections>
+                        </adBannerView>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="gray" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="310" id="Md9-cO-FQf">
-                                <rect key="frame" x="0.0" y="22" width="320" height="310"/>
+                                <rect key="frame" x="0.0" y="72" width="320" height="310"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="309"/>
@@ -132,6 +143,11 @@
                                 <action selector="refresh:" destination="YV9-Ku-PBf" id="UWV-j7-6f8"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="search.png" id="ptY-db-8vy">
+                            <connections>
+                                <action selector="showInfo:" destination="YV9-Ku-PBf" id="7dS-f9-OIe"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="adView" destination="tBb-Qc-Mpg" id="X5B-vz-77x"/>
@@ -139,14 +155,6 @@
                         <segue destination="hfH-5Q-2Ez" kind="push" identifier="showWebView" id="ghE-Sk-FYD"/>
                     </connections>
                 </tableViewController>
-                <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="tBb-Qc-Mpg">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                    <requiredContentSizeIdentifiers>
-                        <string>ADBannerContentSizeLandscape</string>
-                        <string>ADBannerContentSizePortrait</string>
-                    </requiredContentSizeIdentifiers>
-                </adBannerView>
             </objects>
             <point key="canvasLocation" x="548" y="-604"/>
         </scene>
@@ -169,6 +177,7 @@
     </scenes>
     <resources>
         <image name="120717-TabIconFire.png" width="30" height="30"/>
+        <image name="search.png" width="20" height="20"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

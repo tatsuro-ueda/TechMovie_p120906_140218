@@ -25,6 +25,7 @@
 // 解析中の情報
 @property (strong, nonatomic) NSMutableArray *elementStack;
 @property (strong, nonatomic) RSSEntry *curEntry;
+@property float realProgress;
 
 - (BOOL)parseContentsOfURL:(NSURL *)url progressView:(UIProgressView *)progressView fileName:(NSString *)fileName performer:(id)performer;
 - (NSDate *)pubDateWithString:(NSString *)string;

@@ -54,7 +54,18 @@
     parser.delegate = self;
     
     // エントリーを入れる配列をクリアする
-    self.entries = [NSMutableArray arrayWithCapacity:0];
+    @try {
+        self.entries = [NSMutableArray arrayWithCapacity:0];
+    }
+    @catch (NSException *exception) {
+        [[_performer weakOperation] cancel];
+        UIAlertView *alert = [[UIAlertView alloc] init];
+        alert.title = [NSString stringWithFormat:@"エラー"];
+        alert.message = [NSString stringWithFormat:@"%@", exception.description];
+        alert.delegate = self;
+        [alert addButtonWithTitle:@"OK"];
+        [alert show];
+    }
     
     // 以前ダウンロードしたフィードを用意する
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
@@ -93,7 +104,10 @@ didStartElement:(NSString *)elementName
     // メインスレッドに戻す
     NSOperationQueue *mainQueue = [NSOperationQueue mainQueue];
     [mainQueue addOperationWithBlock:^{
-        _progressView.progress = (CGFloat)[parser lineNumber] / (CGFloat)_totalLines;
+        _realProgress = (CGFloat)[parser lineNumber] / (CGFloat)_totalLines;
+        if (_progressView.progress < _realProgress) {
+            _progressView.progress = _realProgress;
+        }
     }];
 }
 
@@ -118,7 +132,10 @@ didStartElement:(NSString *)elementName
     // メインスレッドに戻す
     NSOperationQueue *mainQueue = [NSOperationQueue mainQueue];
     [mainQueue addOperationWithBlock:^{
-        _progressView.progress = (CGFloat)[parser lineNumber] / (CGFloat)_totalLines;
+        _realProgress = (CGFloat)[parser lineNumber] / (CGFloat)_totalLines;
+        if (_progressView.progress < _realProgress) {
+            _progressView.progress = _realProgress;
+        }
     }];
 }
 
@@ -258,7 +275,10 @@ didStartElement:(NSString *)elementName
     // メインスレッドに戻す
     NSOperationQueue *mainQueue = [NSOperationQueue mainQueue];
     [mainQueue addOperationWithBlock:^{
-        _progressView.progress = (CGFloat)[parser lineNumber] / (CGFloat)_totalLines;
+        _realProgress = (CGFloat)[parser lineNumber] / (CGFloat)_totalLines;
+        if (_progressView.progress < _realProgress) {
+            _progressView.progress = _realProgress;
+        }
     }];
 }
 

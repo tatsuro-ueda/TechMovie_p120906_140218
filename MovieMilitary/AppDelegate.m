@@ -10,8 +10,6 @@
 #import "GANTracker.h"
 #import "Const.h"
 
-#import "AppDelegatePart.m"
-
 @implementation AppDelegate
 
 @synthesize window = _window;
@@ -20,10 +18,10 @@
 {
     // Override point for customization after application launch.
     if (![[NSUserDefaults standardUserDefaults] objectForKey:@"keyword0"]) {
-        [[NSUserDefaults standardUserDefaults] setObject:@"猫" forKey:@"keyword0"];
+        [[NSUserDefaults standardUserDefaults] setObject:@"鉄道" forKey:@"keyword0"];
     }
     if (![[NSUserDefaults standardUserDefaults] objectForKey:@"keyword1"]) {
-        [[NSUserDefaults standardUserDefaults] setObject:@"cat" forKey:@"keyword1"];
+        [[NSUserDefaults standardUserDefaults] setObject:@"railway" forKey:@"keyword1"];
     }
     
     // Google Analytics
@@ -84,12 +82,7 @@
         
         UIAlertView *alertView = [[UIAlertView alloc] init];
         alertView.title = [NSString stringWithFormat:@"ようこそ"];
-#ifdef PAYED
-        alertView.message = @"最初に、右上の「キーワード」ボタンを押して興味のあるキーワードを選んで下さい。この画面に戻ってくると自動的にデータを読み込み始めます。どのキーワードも初回は時間がかかりますが、2回目以降は短くなります。";
-#endif
-#ifdef FREE
-        alertView.message = @"最初に、左上の「更新」ボタンを押して下さい。新着動画のリストを読み込みます。初回は時間がかかりますが、2回目以降は短くなります。";
-#endif
+        alertView.message = FirstAlertFree;
         alertView.delegate = self;
         [alertView addButtonWithTitle:@"OK"];
         [alertView show];
@@ -164,21 +157,8 @@
             NSLog(@"%@", @"データの保存に成功しました。");
         }
         
-#ifdef CAT
-        [[NSUserDefaults standardUserDefaults] setObject:@"猫" forKey:@"keyword0"];
-        [[NSUserDefaults standardUserDefaults] setObject:@"cat" forKey:@"keyword1"];
-        NSLog(@"cat");
-#endif
-#ifdef MILITARY
         [[NSUserDefaults standardUserDefaults] setObject:@"軍事" forKey:@"keyword0"];
         [[NSUserDefaults standardUserDefaults] setObject:@"military" forKey:@"keyword1"];
-        NSLog(@"military");
-#endif
-#ifdef RAILWAY
-        [[NSUserDefaults standardUserDefaults] setObject:@"鉄道" forKey:@"keyword0"];
-        [[NSUserDefaults standardUserDefaults] setObject:@"railway" forKey:@"keyword1"];
-        NSLog(@"railway");
-#endif
         
         // ユーザーキーワードペア配列を準備する
         fileName = UserKeywordPairsDat;
@@ -196,7 +176,7 @@
     else if (numAct == 5) {
         _alert = [[UIAlertView alloc] init];
         _alert.title = [NSString stringWithFormat:@"ご案内"];
-        _alert.message = @"「新着動画＋」ではキーワードを自由に何個でも設定できます";
+        _alert.message = @"「新着動画＋」では30個ほどの定番キーワードをご利用いただけます。さらに、自由にキーワードを何個でも設定できます";
         _alert.delegate = self;
         [_alert addButtonWithTitle:@"アプリを見る"];
         [_alert addButtonWithTitle:@"キャンセル"];
@@ -231,7 +211,7 @@
 {
     if (alertView == _alert && buttonIndex == 0)
     {
-        [[UIApplication sharedApplication] openURL: [NSURL URLWithString:@"http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=284417350&mt=8&uo=6"]];
+        [[UIApplication sharedApplication] openURL: [NSURL URLWithString:URLPayed]];
     }
     
 }
