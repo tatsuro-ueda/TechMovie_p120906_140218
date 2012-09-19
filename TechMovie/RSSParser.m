@@ -198,10 +198,7 @@ didStartElement:(NSString *)elementName
         
         // 記事の本文
         NSString *str = [[self currentEntry] text];
-        
-        // ogImageを抜き出す
-        [str ]
-        
+                
         if (str) {
             str = [str stringByAppendingString:string];
         }
@@ -210,6 +207,11 @@ didStartElement:(NSString *)elementName
         }
         
         [[self currentEntry] setText:str];
+
+        //ogImageを抜き出す
+        NSLog(@"RSSParser: %@", str);
+        [self currentEntry].ogImageURL = [NSURL ogImageURLWithString:str];
+
     }
     else if ([str isEqualToString:@"/rss/channel/item/link"]) {
         
@@ -244,7 +246,7 @@ didStartElement:(NSString *)elementName
             [self currentEntry].ogImageURL = [NSURL ogImageURLWithURL:url];
             
             // og:imageがない場合
-            NSLog(@"beforeIf: %@", [self currentEntry].ogImageURL);
+            NSLog(@"ogImage does not exist: %@", [self currentEntry].ogImageURL);
             if ([self currentEntry].ogImageURL == nil) {
                 
                 // はてなAPIに問い合わせるURLをつくる

@@ -8,8 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSString (OgImageURL)
+@interface NSURL (OgImageURL)
 
 + (NSURL *)ogImageURLWithString:(NSString *)str;
++ (NSURL *)ogImageURLWithURL:(NSURL *)url;
 
 @end
