@@ -188,6 +188,29 @@ didStartElement:(NSString *)elementName
         }
         [[self currentEntry] setTitle:str];
     }
+    else if ([str isEqualToString:@"/rss/channel/item/pubDate"]) {
+        
+        // 記事の日時
+        NSDate *date = [self pubDateWithString:string];
+        [[self currentEntry] setDate:date];
+    }
+    else if ([str isEqualToString:@"/rss/channel/item/description"]) {
+        
+        // 記事の本文
+        NSString *str = [[self currentEntry] text];
+        
+        // ogImageを抜き出す
+        [str ]
+        
+        if (str) {
+            str = [str stringByAppendingString:string];
+        }
+        else {
+            str = string;
+        }
+        
+        [[self currentEntry] setText:str];
+    }
     else if ([str isEqualToString:@"/rss/channel/item/link"]) {
         
         // 記事のアドレス
@@ -209,17 +232,15 @@ didStartElement:(NSString *)elementName
                 
                 // どっちが正しいの？
                 return;
-//                break;
+                //                break;
             }
             
             // 既得エントリーでなければ新規エントリー
             [[self currentEntry] setIsNewEntry:YES];
         }
         if (![[self currentEntry] ogImageURL]) {
-
+            
             // 該当ページのog:imageを取得する
-            // この箇所のコメントアウトを外すとog:imageのアドレス取得が非同期に行われる
-            //        [parseQueue addOperationWithBlock:^{
             [self currentEntry].ogImageURL = [NSURL ogImageURLWithURL:url];
             
             // og:imageがない場合
@@ -232,13 +253,13 @@ didStartElement:(NSString *)elementName
                 
                 urlStringTarget = [urlStringTarget urlEncodeUsingEncoding:NSASCIIStringEncoding];
                 
-                NSString *urlStringWhole = [NSString stringWithFormat:@"%@%@", urlStringHatena, urlStringTarget]; 
+                NSString *urlStringWhole = [NSString stringWithFormat:@"%@%@", urlStringHatena, urlStringTarget];
                 NSURL *hatenaAPIURL = [NSURL URLWithString:urlStringWhole];
                 
                 // はてなAPIにリクエストを送り、返ってきたJSONを解析してスクリーンショットのURLを見つけ出す
                 NSURLRequest *request = [NSURLRequest requestWithURL:hatenaAPIURL];
                 __block NSURL *ssURL = nil;
-                AFJSONRequestOperation *operation = 
+                AFJSONRequestOperation *operation =
                 [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
                     ssURL = [NSURL URLWithString:[JSON valueForKeyPath:@"screenshot"]];
                     [self currentEntry].ogImageURL = ssURL;
@@ -246,29 +267,9 @@ didStartElement:(NSString *)elementName
                 NSOperationQueue *queue = [[NSOperationQueue alloc] init];
                 [queue addOperation: operation];
                 [queue waitUntilAllOperationsAreFinished];
-            }                        
+            }
             //         }];
         }
-    }
-    else if ([str isEqualToString:@"/rss/channel/item/pubDate"]) {
-        
-        // 記事の日時
-        NSDate *date = [self pubDateWithString:string];
-        [[self currentEntry] setDate:date];
-    }
-    else if ([str isEqualToString:@"/rss/channel/item/description"]) {
-        
-        // 記事の本文
-        NSString *str = [[self currentEntry] text];
-        
-        if (str) {
-            str = [str stringByAppendingString:string];
-        }
-        else {
-            str = string;
-        }
-        
-        [[self currentEntry] setText:str];
     }
     
     // プログレスビューの更新

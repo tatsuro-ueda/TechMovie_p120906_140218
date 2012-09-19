@@ -10,6 +10,6 @@
 
 @interface UIImage (OgImage)
 
-+ (UIImage *)ogImageWithURL:(NSURL *)url;
++ (UIImage *)ogImageWithString:(NSString *)url;
 
 @end

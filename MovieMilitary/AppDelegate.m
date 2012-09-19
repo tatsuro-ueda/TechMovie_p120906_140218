@@ -156,7 +156,8 @@
         if (successful) {
             NSLog(@"%@", @"データの保存に成功しました。");
         }
-        
+
+        // ターゲット固有
         [[NSUserDefaults standardUserDefaults] setObject:@"軍事" forKey:@"keyword0"];
         [[NSUserDefaults standardUserDefaults] setObject:@"military" forKey:@"keyword1"];
         

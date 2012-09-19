@@ -18,6 +18,12 @@
 				<string>120913-CatAppIcon72x72.png</string>
 				<string>120913-CatAppIcon144x144.png</string>
 				<string>120913-CatAppIcon57x57.png</string>
+				<string>Default.png</string>
+				<string>Default@2x.png</string>
+				<string>Default-Portrait~ipad.png</string>
+				<string>Default-Portrait@2x~ipad.png</string>
+				<string>Default-Landscape~ipad.png</string>
+				<string>Default-Landscape@2x~ipad.png</string>
 			</array>
 			<key>UIPrerenderedIcon</key>
 			<true/>
@@ -41,6 +47,8 @@
 	<true/>
 	<key>UIMainStoryboardFile</key>
 	<string>MainStoryboard</string>
+	<key>UIMainStoryboardFile~ipad</key>
+	<string>iPadMainStoryboard</string>
 	<key>UIPrerenderedIcon</key>
 	<true/>
 	<key>UIRequiredDeviceCapabilities</key>

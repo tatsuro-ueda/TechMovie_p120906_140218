@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2549" systemVersion="11E53" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="5qK-1f-V4o">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1498"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="hiV-Th-kud">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="abf-RO-54o" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController definesPresentationContext="YES" id="5qK-1f-V4o" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="120717-TabIconFire.png" id="4E4-wo-o1Y"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
+                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="l8Z-wh-RqW">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="442-sD-l1Q" kind="relationship" relationship="rootViewController" id="7D3-ba-ojA"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="14" y="-604"/>
+        </scene>
+        <!--Feeds Table View Controller - Root View Controller-->
+        <scene sceneID="WKO-oA-Lks">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Szo-8L-LbB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableViewController id="442-sD-l1Q" customClass="FeedsTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="562" sectionHeaderHeight="22" sectionFooterHeight="22" id="qeh-39-7Do">
+                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <adBannerView key="tableHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="kn5-2q-F79">
+                            <rect key="frame" x="0.0" y="0.0" width="768" height="115"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            <requiredContentSizeIdentifiers>
+                                <string>ADBannerContentSizeLandscape</string>
+                                <string>ADBannerContentSizePortrait</string>
+                            </requiredContentSizeIdentifiers>
+                            <connections>
+                                <outlet property="delegate" destination="442-sD-l1Q" id="8pU-1I-Bjc"/>
+                            </connections>
+                        </adBannerView>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="gray" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="562" id="JzN-hx-X6r">
+                                <rect key="frame" x="0.0" y="88" width="768" height="562"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="768" height="561"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" id="6JI-zU-d3x">
+                                            <rect key="frame" x="0.0" y="0.0" width="768" height="432"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" tag="5" contentMode="scaleAspectFit" id="YGl-pj-Pby">
+                                                    <rect key="frame" x="0.0" y="0.0" width="768" height="432"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="left" text="Label" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontSizeToFit="NO" id="Rzc-8W-lfF">
+                                            <rect key="frame" x="20" y="440" width="728" height="38"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="A6E-d4-70R">
+                                            <rect key="frame" x="20" y="486" width="53" height="17"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="4" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="xbP-G6-vhc">
+                                            <rect key="frame" x="81" y="486" width="51" height="17"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                            <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="3" contentMode="left" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="10" id="sRb-7H-QFI">
+                                            <rect key="frame" x="20" y="511" width="728" height="32"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="6" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="4vk-fv-Uug">
+                                            <rect key="frame" x="160" y="486" width="51" height="17"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                            <color key="textColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="ff1-Dc-Nd2">
+                        <barButtonItem key="backBarButtonItem" title="リスト" id="qzR-i9-gL0"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="refresh" id="m7P-dU-lSk">
+                            <connections>
+                                <action selector="refresh:" destination="442-sD-l1Q" id="VLh-d0-hEt"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="search.png" id="02G-yg-Lf3">
+                            <connections>
+                                <action selector="showInfo:" destination="442-sD-l1Q" id="LFH-1p-jTh"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
+                    <connections>
+                        <outlet property="adView" destination="kn5-2q-F79" id="nom-OV-hhx"/>
+                        <outlet property="tableView" destination="qeh-39-7Do" id="RdZ-HZ-i33"/>
+                        <segue destination="bot-hu-rbv" kind="push" identifier="showWebView" id="nrr-dm-AZu"/>
+                    </connections>
+                </tableViewController>
+            </objects>
+            <point key="canvasLocation" x="968" y="-604"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="TfZ-0d-WuG">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wxB-fz-JHl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="bot-hu-rbv" customClass="WebViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Mxu-7p-D8J">
+                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" scalesPageToFit="YES" id="pu9-Tl-1t6">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="1013"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="delegate" destination="bot-hu-rbv" id="lIu-yw-D8d"/>
+                                </connections>
+                            </webView>
+                            <view userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" id="wx6-Cv-faY">
+                                <rect key="frame" x="339" y="435" width="90" height="90"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                            </view>
+                            <activityIndicatorView hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" hidesWhenStopped="YES" style="whiteLarge" id="DBm-oO-JWZ">
+                                <rect key="frame" x="364" y="460" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
+                            <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="5S7-Vb-d0X">
+                                <rect key="frame" x="0.0" y="894" width="768" height="66"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <requiredContentSizeIdentifiers>
+                                    <string>ADBannerContentSizeLandscape</string>
+                                    <string>ADBannerContentSizePortrait</string>
+                                </requiredContentSizeIdentifiers>
+                            </adBannerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Oab-z5-JiN"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="actIndicator" destination="DBm-oO-JWZ" id="bRy-dg-me6"/>
+                        <outlet property="actIndicatorBack" destination="wx6-Cv-faY" id="PJM-1s-crJ"/>
+                        <outlet property="webView" destination="pu9-Tl-1t6" id="HGN-eG-BzV"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="2019" y="-609"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="120717-TabIconFire.png" width="16" height="16"/>
+        <image name="search.png" width="20" height="20"/>
+    </resources>
+    <classes>
+        <class className="FeedsTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FeedsTableViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="refresh:"/>
+                <relationship kind="action" name="showInfo:"/>
+                <relationship kind="action" name="showSetting:"/>
+                <relationship kind="outlet" name="adView" candidateClass="ADBannerView"/>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="WebViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/WebViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="actIndicator" candidateClass="UIActivityIndicatorView"/>
+                <relationship kind="outlet" name="actIndicatorBack" candidateClass="UIView"/>
+                <relationship kind="outlet" name="adView" candidateClass="ADBannerView"/>
+                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+    </classes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+</document>

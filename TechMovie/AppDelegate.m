@@ -157,6 +157,7 @@
             NSLog(@"%@", @"データの保存に成功しました。");
         }
         
+        // ターゲット固有
         [[NSUserDefaults standardUserDefaults] setObject:@"猫" forKey:@"keyword0"];
         [[NSUserDefaults standardUserDefaults] setObject:@"cat" forKey:@"keyword1"];
         
