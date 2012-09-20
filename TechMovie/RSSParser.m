@@ -210,7 +210,7 @@ didStartElement:(NSString *)elementName
 
         //ogImageを抜き出す
         NSLog(@"RSSParser: %@", str);
-        [self currentEntry].ogImageURL = [NSURL ogImageURLWithString:str];
+        [self currentEntry].ogImageURL = [NSURL ogImageURLWithDescription:str];
 
     }
     else if ([str isEqualToString:@"/rss/channel/item/link"]) {
@@ -223,6 +223,9 @@ didStartElement:(NSString *)elementName
         if (_oldFeeds.count == 0) {
             [self currentEntry].isNewEntry = YES;
         }
+#define TEST
+#ifdef TEST
+#else
         
         // _oldFeedsが空でないときは[self currentEntry]と照合してurlが同じ物があれば既得エントリーとみなす
         for (RSSEntry *entry in _oldFeeds) {
@@ -236,10 +239,10 @@ didStartElement:(NSString *)elementName
                 return;
                 //                break;
             }
-            
             // 既得エントリーでなければ新規エントリー
             [[self currentEntry] setIsNewEntry:YES];
         }
+#endif
         if (![[self currentEntry] ogImageURL]) {
             
             // 該当ページのog:imageを取得する

@@ -12,10 +12,10 @@
 @implementation NSURL (OgImageURL)
 
 // get URL of og:image by [NSURL ogImageWithURL:url]
-+ (NSURL *)ogImageURLWithString:(NSString *)str
++ (NSURL *)ogImageURLWithDescription:(NSString *)str
 {
     /*
-     * og:image Check
+     * og:image Check for Vimeo
      */
     // prepare regular expression to find text
     NSError *error   = nil;
@@ -38,7 +38,7 @@
     if (match) {
         
         // get the og:image URL from the find result
-        NSRange urlRange = NSMakeRange(resultRange.location + 1, resultRange.length + 1 - 2);
+        NSRange urlRange = NSMakeRange(resultRange.location + 1, resultRange.length - 2);
         
         // og:image URL
         NSLog(@"og:image URL: %@",[str substringWithRange:urlRange]);

@@ -10,7 +10,7 @@
 
 @interface NSURL (OgImageURL)
 
-+ (NSURL *)ogImageURLWithString:(NSString *)str;
++ (NSURL *)ogImageURLWithDescription:(NSString *)str;
 + (NSURL *)ogImageURLWithURL:(NSURL *)url;
 
 @end
