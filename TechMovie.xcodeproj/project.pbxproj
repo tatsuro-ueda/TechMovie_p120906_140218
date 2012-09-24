@@ -23,6 +23,10 @@
 		076AD79E15F9DEBC00A06E44 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 076AD79C15F9DEAB00A06E44 /* SystemConfiguration.framework */; };
 		076AD79F15F9DEBD00A06E44 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 076AD79C15F9DEAB00A06E44 /* SystemConfiguration.framework */; };
 		076AD7A015F9DEBE00A06E44 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 076AD79C15F9DEAB00A06E44 /* SystemConfiguration.framework */; };
+		076C6522160C449A00014F49 /* NSString+OgImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 076C6521160C449A00014F49 /* NSString+OgImage.m */; };
+		076C6523160C449A00014F49 /* NSString+OgImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 076C6521160C449A00014F49 /* NSString+OgImage.m */; };
+		076C6524160C449A00014F49 /* NSString+OgImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 076C6521160C449A00014F49 /* NSString+OgImage.m */; };
+		076C6525160C449A00014F49 /* NSString+OgImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 076C6521160C449A00014F49 /* NSString+OgImage.m */; };
 		07744A9D16031229009FC1D6 /* search.png in Resources */ = {isa = PBXBuildFile; fileRef = 07744A9B16031229009FC1D6 /* search.png */; };
 		07744A9E16031229009FC1D6 /* search.png in Resources */ = {isa = PBXBuildFile; fileRef = 07744A9B16031229009FC1D6 /* search.png */; };
 		07744A9F16031229009FC1D6 /* search.png in Resources */ = {isa = PBXBuildFile; fileRef = 07744A9B16031229009FC1D6 /* search.png */; };
@@ -214,6 +218,8 @@
 		073DA45C16014258003D06C9 /* 120913-CatAppIcon144x144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "120913-CatAppIcon144x144.png"; sourceTree = "<group>"; };
 		073DA45E16014286003D06C9 /* 120913-CatAppIcon57x57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "120913-CatAppIcon57x57.png"; sourceTree = "<group>"; };
 		076AD79C15F9DEAB00A06E44 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		076C6520160C449A00014F49 /* NSString+OgImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+OgImage.h"; sourceTree = "<group>"; };
+		076C6521160C449A00014F49 /* NSString+OgImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+OgImage.m"; sourceTree = "<group>"; };
 		07744A9B16031229009FC1D6 /* search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = search.png; sourceTree = "<group>"; };
 		07744A9C16031229009FC1D6 /* search@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "search@2x.png"; sourceTree = "<group>"; };
 		07DC337915F7EEC500DD97FD /* TechMovie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TechMovie.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -224,7 +230,7 @@
 		07DC338715F7EEC500DD97FD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		07DC338915F7EEC500DD97FD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		07DC338B15F7EEC500DD97FD /* TechMovie-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TechMovie-Prefix.pch"; sourceTree = "<group>"; };
-		07DC339F15F7EF3000DD97FD /* AFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPClient.h; sourceTree = "<group>"; };
+		07DC339F15F7EF3000DD97FD /* AFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = AFHTTPClient.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		07DC33A015F7EF3000DD97FD /* AFHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPClient.m; sourceTree = "<group>"; };
 		07DC33A115F7EF3000DD97FD /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
 		07DC33A215F7EF3000DD97FD /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
@@ -461,6 +467,8 @@
 				07DC33EE15F7F19200DD97FD /* NSString+URLEncode.m */,
 				07DC33EA15F7F16200DD97FD /* NSURL+OgImage.h */,
 				07DC33EB15F7F16200DD97FD /* NSURL+OgImage.m */,
+				076C6520160C449A00014F49 /* NSString+OgImage.h */,
+				076C6521160C449A00014F49 /* NSString+OgImage.m */,
 				07DC33CD15F7EFFB00DD97FD /* FeedsTableViewController.h */,
 				07DC33CE15F7EFFB00DD97FD /* FeedsTableViewController.m */,
 				07DC33CF15F7EFFB00DD97FD /* RSSEntry.h */,
@@ -833,6 +841,7 @@
 				07DC33EC15F7F16200DD97FD /* NSURL+OgImage.m in Sources */,
 				07DC33EF15F7F19200DD97FD /* NSString+URLEncode.m in Sources */,
 				07DC33F215F7F1C600DD97FD /* NSString+Encode.m in Sources */,
+				076C6522160C449A00014F49 /* NSString+OgImage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -862,6 +871,7 @@
 				07DC343815F7F58000DD97FD /* WebViewController.m in Sources */,
 				07DC343B15F7F58000DD97FD /* Const.m in Sources */,
 				07DC344B15F7FE5100DD97FD /* AppDelegate.m in Sources */,
+				076C6523160C449A00014F49 /* NSString+OgImage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -891,6 +901,7 @@
 				07DC348815F8012400DD97FD /* UIImage+OgImage.m in Sources */,
 				07DC348915F8012400DD97FD /* WebViewController.m in Sources */,
 				07DC348C15F8012400DD97FD /* Const.m in Sources */,
+				076C6524160C449A00014F49 /* NSString+OgImage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -921,6 +932,7 @@
 				07DC34C915F802D100DD97FD /* WebViewController.m in Sources */,
 				07DC34CA15F802D100DD97FD /* Const.m in Sources */,
 				07DC34D415F803EA00DD97FD /* SettingViewController.m in Sources */,
+				076C6525160C449A00014F49 /* NSString+OgImage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

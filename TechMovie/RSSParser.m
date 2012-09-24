@@ -12,6 +12,7 @@
 #import "AFJSONRequestOperation.h"
 #import "NSString+URLEncode.h"
 #import "FeedsTableViewController.h"
+#import "NSString+OgImage.h"
 
 @implementation RSSParser
 
@@ -58,10 +59,9 @@
         self.entries = [NSMutableArray arrayWithCapacity:0];
     }
     @catch (NSException *exception) {
-        [[_performer weakOperation] cancel];
         UIAlertView *alert = [[UIAlertView alloc] init];
         alert.title = [NSString stringWithFormat:@"エラー"];
-        alert.message = [NSString stringWithFormat:@"%@", exception.description];
+        alert.message = [NSString stringWithFormat:@"%@", exception];
         alert.delegate = self;
         [alert addButtonWithTitle:@"OK"];
         [alert show];
@@ -72,7 +72,20 @@
     NSString *directory = [paths objectAtIndex:0];
     NSString *oldFileName = [NSString stringWithFormat:@"%@", fileName];
     NSString *filePath = [directory stringByAppendingPathComponent:oldFileName];
-    _oldFeeds = [NSKeyedUnarchiver unarchiveObjectWithFile:filePath];
+    @try {
+        _oldFeeds = [NSKeyedUnarchiver unarchiveObjectWithFile:filePath];
+    }
+    @catch (NSException *exception) {
+        UIAlertView *alertView = [[UIAlertView alloc] init];
+        alertView.title = @"エラー";
+        alertView.message = [NSString stringWithFormat:@"%@", exception];
+        alertView.delegate = self;
+        [alertView addButtonWithTitle:@"了解"];
+        [alertView show];
+        
+        [[_performer weakOperation] cancel];
+        [[NSFileManager defaultManager] removeItemAtPath:filePath error:&error];
+    }
     
     // 解析開始
     if ([parser parse]) {
@@ -126,6 +139,24 @@ didStartElement:(NSString *)elementName
         
         [self.entries addObject:_curEntry];
         self.curEntry = nil;
+    } else if ([elementName isEqualToString:@"description"]) {
+        //ogImageを抜き出す
+        if ([[self elementPath] isEqualToString:@"/rss/channel/item"]) {
+            NSString *str = [self currentEntry].text;
+            NSLog(@"%@", str);
+            //ogImageを抜き出す
+            [self currentEntry].ogImageURL = [NSURL ogImageURLWithVimeoDescription:str];
+            if (![self currentEntry].ogImageURL) {
+                [self currentEntry].ogImageURL = [NSURL ogImageURLWithNicoDescription:str];
+            }
+            if (![self currentEntry].ogImageURL) {
+                NSLog(@"ogImageURL: %@", [self currentEntry].ogImageURL);
+                [self currentEntry].ogImageURL = [NSURL ogImageURLWithURL:[self currentEntry].url];
+            }
+            str = [NSString ogImageURLWithNicoDescription:str];
+            str = [NSString ogImageURLWithVimeoDescription:str];
+            [self currentEntry].text = str;
+        }
     }
 
     // プログレスビューの更新
@@ -207,11 +238,7 @@ didStartElement:(NSString *)elementName
         }
         
         [[self currentEntry] setText:str];
-
-        //ogImageを抜き出す
-        NSLog(@"RSSParser: %@", str);
-        [self currentEntry].ogImageURL = [NSURL ogImageURLWithDescription:str];
-
+        
     }
     else if ([str isEqualToString:@"/rss/channel/item/link"]) {
         
@@ -223,7 +250,6 @@ didStartElement:(NSString *)elementName
         if (_oldFeeds.count == 0) {
             [self currentEntry].isNewEntry = YES;
         }
-#define TEST
 #ifdef TEST
 #else
         
@@ -243,6 +269,9 @@ didStartElement:(NSString *)elementName
             [[self currentEntry] setIsNewEntry:YES];
         }
 #endif
+#define TEST2
+#ifdef TEST2
+#else
         if (![[self currentEntry] ogImageURL]) {
             
             // 該当ページのog:imageを取得する
@@ -275,6 +304,7 @@ didStartElement:(NSString *)elementName
             }
             //         }];
         }
+#endif
     }
     
     // プログレスビューの更新

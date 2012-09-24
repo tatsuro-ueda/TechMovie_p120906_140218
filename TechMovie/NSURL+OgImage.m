@@ -12,7 +12,7 @@
 @implementation NSURL (OgImageURL)
 
 // get URL of og:image by [NSURL ogImageWithURL:url]
-+ (NSURL *)ogImageURLWithDescription:(NSString *)str
++ (NSURL *)ogImageURLWithVimeoDescription:(NSString *)str
 {
     /*
      * og:image Check for Vimeo
@@ -20,8 +20,6 @@
     // prepare regular expression to find text
     NSError *error   = nil;
     NSRegularExpression *regexp = [NSRegularExpression regularExpressionWithPattern: @"\"http://b.vimeocdn.com.+.jpg\"" options:0 error:&error];
-    NSLog(@"regexp: %@", regexp);
-    NSLog(@"str: %@", str);
     
     // エラーならば表示する
     if (error != nil) {
@@ -34,14 +32,49 @@
     
     // get the first result
     NSRange resultRange = [match rangeAtIndex:0];
-    NSLog(@"match=%@", [str substringWithRange:resultRange]);
     if (match) {
         
         // get the og:image URL from the find result
         NSRange urlRange = NSMakeRange(resultRange.location + 1, resultRange.length - 2);
         
         // og:image URL
-        NSLog(@"og:image URL: %@",[str substringWithRange:urlRange]);
+        return [NSURL URLWithString:[str substringWithRange:urlRange]];
+    }
+    
+    return nil;
+}
+
+// get URL of og:image by [NSURL ogImageWithURL:url]
++ (NSURL *)ogImageURLWithNicoDescription:(NSString *)str
+{
+    /*
+     * og:image Check for Vimeo
+     */
+    // prepare regular expression to find text
+    NSError *error   = nil;
+    NSRegularExpression *regexp = [NSRegularExpression regularExpressionWithPattern:@"\"http://.+\\.smilevideo\\.jp/smile\\?i=[0-9]{8}+\"" options:0 error:&error];
+//    NSLog(@"regexp.nico: %@", regexp);
+//    NSLog(@"str.nico: %@", str);
+    
+    // エラーならば表示する
+    if (error != nil) {
+        NSLog(@"%@", error);
+    }
+    
+    // find by regular expression
+    NSTextCheckingResult *match =
+    [regexp firstMatchInString:str options:0 range:NSMakeRange(0, str.length)];
+    
+    // get the first result
+    NSRange resultRange = [match rangeAtIndex:0];
+//    NSLog(@"match.nico=%@", [str substringWithRange:resultRange]);
+    if (match) {
+        
+        // get the og:image URL from the find result
+        NSRange urlRange = NSMakeRange(resultRange.location + 1, resultRange.length - 2);
+        
+        // og:image URL
+//        NSLog(@"og:image URL.nico: %@",[str substringWithRange:urlRange]);
         return [NSURL URLWithString:[str substringWithRange:urlRange]];
     }
     

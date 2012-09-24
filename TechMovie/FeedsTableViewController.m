@@ -210,7 +210,7 @@ static NSInteger dateDescending(id item1, id item2, void *context)
         if (successful) {
             NSLog(@"%@", @"データの保存に成功しました。");
         }
-        
+                
         // メインスレッドに戻す
         NSOperationQueue *mainQueue = [NSOperationQueue mainQueue];
         [mainQueue addOperationWithBlock:^{
@@ -234,6 +234,9 @@ static NSInteger dateDescending(id item1, id item2, void *context)
                 }
             }
             
+            // performselectoer:judgeServerAliveをキャンセルする
+            [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(judgeServerAlive) object: nil];
+
             UIAlertView *alertView = [[UIAlertView alloc] init];
             if (numNewEntry > 0) {
                 alertView.title = [NSString stringWithFormat:@"%d 件の新着動画があります",numNewEntry];
@@ -315,7 +318,7 @@ static NSInteger dateDescending(id item1, id item2, void *context)
         
         // 「NEW」ラベル
         if ([[self.itemsArray objectAtIndex:indexPath.row] isNewEntry]) {
-            labelNew.text = @"NEW";
+            labelNew.text = @"新着";
         }
         else {
             labelNew.text = nil;
@@ -561,13 +564,15 @@ static NSInteger dateDescending(id item1, id item2, void *context)
 {
     float progress = _progressView.progress;
     if (progress < 0.9) {
-        _progressView.progress += 0.001;
+        _progressView.progress += 0.004;
     }
     else
     {
-        [_timerIncrease invalidate];
-        // 90%になったら、サーバーからの返答の有無を10秒後に判断する
+        // 90%になったら、サーバーからの返答の有無を20秒後に判断する
         [self performSelector:@selector(judgeServerAlive) withObject:nil afterDelay:20.0];
+
+        // タイマーは止める
+        [_timerIncrease invalidate];
     }
 }
 
@@ -580,7 +585,7 @@ static NSInteger dateDescending(id item1, id item2, void *context)
         [_progressAlertView dismissWithClickedButtonIndex:0 animated:YES];
         
         UIAlertView *alertView = [[UIAlertView alloc] init];
-        alertView.title = @"ネットワークに問題があります。場所を変えるなどして再度お試しください。";
+        alertView.title = @"ネットワークに問題があるか、サーバーが混雑しています。場所・時間を変えるなどして再度お試しください。";
         alertView.message = nil;
         alertView.delegate = self;
         [alertView addButtonWithTitle:@"了解"];

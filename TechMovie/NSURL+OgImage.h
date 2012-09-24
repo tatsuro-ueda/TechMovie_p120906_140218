@@ -10,7 +10,8 @@
 
 @interface NSURL (OgImageURL)
 
-+ (NSURL *)ogImageURLWithDescription:(NSString *)str;
++ (NSURL *)ogImageURLWithVimeoDescription:(NSString *)str;
++ (NSURL *)ogImageURLWithNicoDescription:(NSString *)str;
 + (NSURL *)ogImageURLWithURL:(NSURL *)url;
 
 @end
