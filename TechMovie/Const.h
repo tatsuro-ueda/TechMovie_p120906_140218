@@ -14,3 +14,5 @@ extern NSString* const FirstAlertPayed;
 
 extern NSString* const InfoPayed;
 extern NSString* const URLPayed;
+
+extern NSString* const didGoToWebView;

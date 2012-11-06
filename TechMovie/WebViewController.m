@@ -7,6 +7,7 @@
 //
 
 #import "WebViewController.h"
+#import "Const.h"
 
 @interface WebViewController ()
 
@@ -32,6 +33,9 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
+//    NSString *path = [[NSBundle mainBundle] pathForResource:@"sample" ofType:@"html"];
+//    [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL fileURLWithPath:path]]];
     
     @try {
         [self.webView loadRequest:[NSURLRequest requestWithURL:self.URLForSegue]];
@@ -122,5 +126,11 @@
     }
 }
 
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    UITouch *touch = [[event allTouches] anyObject];
+    if ( touch.view.tag == 1 )
+        [[UIApplication sharedApplication] openURL: [NSURL URLWithString:URLPayed]];
+}
 
 @end

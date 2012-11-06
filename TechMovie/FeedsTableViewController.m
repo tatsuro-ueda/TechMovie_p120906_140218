@@ -79,13 +79,17 @@ static NSInteger dateDescending(id item1, id item2, void *context)
     // requestTableDataメソッドを呼び出すという通知要求の登録を行っている。
     NSString *requestTableData = [NSString stringWithFormat:@"requestTableData"];
     [nc addObserver:self selector:@selector(requestTableData) name:requestTableData object:nil];
-}
+
+    UITapGestureRecognizer *myTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(gestureTapEvent:)];
+    _banner.userInteractionEnabled = YES;
+    [_banner addGestureRecognizer:myTapGesture];}
 
 - (void)viewDidUnload
 {
     [self setTableView:nil];
     [self setItemsArray:nil];
     [self setAdView:nil];
+    [self setBanner:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -123,6 +127,14 @@ static NSInteger dateDescending(id item1, id item2, void *context)
     if (![[GANTracker sharedTracker] trackPageview:trackPageTitle withError:&error]) {
         // エラーハンドリング
     }
+#define FREE
+#ifdef FREE
+    // WebViewからの戻りならフラグを元に戻す
+    BOOL b = [[NSUserDefaults standardUserDefaults] boolForKey:didGoToWebView];
+    if (b) {
+        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:didGoToWebView];
+    }
+#endif
 }
 
 - (void)requestTableData
@@ -144,7 +156,7 @@ static NSInteger dateDescending(id item1, id item2, void *context)
                      initWithFrame:CGRectMake(30.0f, 60.0f, 225.0f, 90.0f)];
     [_progressAlertView addSubview:_progressView];
     [_progressView setProgressViewStyle: UIProgressViewStyleBar];
-    _timerIncrease = [NSTimer scheduledTimerWithTimeInterval:0.05
+    _timerIncrease = [NSTimer scheduledTimerWithTimeInterval:0.01
                                                       target:self
                                                     selector:@selector(increaseProgressBar)
                                                     userInfo:nil
@@ -365,7 +377,7 @@ static NSInteger dateDescending(id item1, id item2, void *context)
     
     for (NSURL *url in urlsArray) {
         @autoreleasepool {
-            
+
             // URLから読み込む
             NSArray *itemsArray = [self itemsArrayFromContentsOfURL:url fileName:fileName performer:performer];
             
@@ -498,6 +510,7 @@ static NSInteger dateDescending(id item1, id item2, void *context)
         NSLog(@"sender = %@", sender);
         controller.URLForSegue = (NSURL *)sender;
         controller.hidesBottomBarWhenPushed = YES;
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:didGoToWebView];
     }
 //    else if ([segue.identifier isEqualToString:@"showSetting"]) {
 //    }
@@ -512,6 +525,8 @@ static NSInteger dateDescending(id item1, id item2, void *context)
 }
 
 - (IBAction)showInfo:(id)sender {
+    [[UIApplication sharedApplication] openURL: [NSURL URLWithString:URLPayed]];
+
     _infoAlertView = [[UIAlertView alloc] init];
     _infoAlertView.title = [NSString stringWithFormat:@"ご案内"];
     _infoAlertView.message = InfoPayed;
@@ -564,7 +579,7 @@ static NSInteger dateDescending(id item1, id item2, void *context)
 {
     float progress = _progressView.progress;
     if (progress < 0.9) {
-        _progressView.progress += 0.004;
+        _progressView.progress += 0.002;
     }
     else
     {
@@ -595,4 +610,5 @@ static NSInteger dateDescending(id item1, id item2, void *context)
     }
     // さもなくば残りの情報を待つ
 }
+
 @end

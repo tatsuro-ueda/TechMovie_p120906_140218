@@ -130,6 +130,11 @@ didStartElement:(NSString *)elementName
   namespaceURI:(NSString *)namespaceURI 
  qualifiedName:(NSString *)qName
 {
+    // 「キャンセル」されたら止める
+    if([_performer weakOperation].isCancelled){
+        return;
+    }
+    
     // エレメント位置を把握するためのスタックからエレメント名を削除する
     [self.elementStack removeLastObject];
     

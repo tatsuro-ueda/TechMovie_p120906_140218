@@ -26,10 +26,12 @@
 }
 // リストに表示するアイテムを格納する配列
 // 各要素は「RSSEntry」クラスのインスタンスとする
+
 @property (strong) NSArray *itemsArray;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) IBOutlet ADBannerView *adView;
 @property __weak NSBlockOperation *weakOperation;
+@property (strong, nonatomic) IBOutlet UITableView *banner;
 
 - (void)reloadFromContentsOfURLsFromArray:(NSArray *)urlsArray fileName:(NSString *)fileName performer:(id)performer;
 - (NSArray *)itemsArrayFromContentsOfURL:(NSURL *)url fileName:(NSString *)fileName performer:(id)performer;

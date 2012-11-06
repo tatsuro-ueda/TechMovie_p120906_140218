@@ -72,7 +72,16 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-    
+
+    if (![[NSUserDefaults standardUserDefaults] boolForKey:didGoToWebView]) {
+        // 通知を作成する
+        NSString *requestTableData = [NSString stringWithFormat:@"requestTableData"];
+        NSNotification *n = [NSNotification notificationWithName:requestTableData object:self];
+        
+        // 通知実行！
+        [[NSNotificationCenter defaultCenter] postNotification:n];
+    }
+
     // 起動回数を見る
     NSInteger numAct = [[NSUserDefaults standardUserDefaults]integerForKey:@"numAct"];
     if (!numAct) {
@@ -80,12 +89,12 @@
         // 初期値を設定する
         numAct = 0;
         
-        UIAlertView *alertView = [[UIAlertView alloc] init];
-        alertView.title = [NSString stringWithFormat:@"ようこそ"];
-        alertView.message = FirstAlertFree;
-        alertView.delegate = self;
-        [alertView addButtonWithTitle:@"OK"];
-        [alertView show];
+//        UIAlertView *alertView = [[UIAlertView alloc] init];
+//        alertView.title = [NSString stringWithFormat:@"ようこそ"];
+//        alertView.message = FirstAlertFree;
+//        alertView.delegate = self;
+//        [alertView addButtonWithTitle:@"OK"];
+//        [alertView show];
         
         
         // キーワードペア配列を保存する
@@ -173,15 +182,15 @@
         }
     }
     // 5回目なら・・・
-    else if (numAct == 5) {
-        _alert = [[UIAlertView alloc] init];
-        _alert.title = [NSString stringWithFormat:@"ご案内"];
-        _alert.message = InfoPayed;
-        _alert.delegate = self;
-        [_alert addButtonWithTitle:@"アプリを見る"];
-        [_alert addButtonWithTitle:@"キャンセル"];
-        [_alert show];
-    }
+//    else if (numAct == 5) {
+//        _alert = [[UIAlertView alloc] init];
+//        _alert.title = [NSString stringWithFormat:@"ご案内"];
+//        _alert.message = InfoPayed;
+//        _alert.delegate = self;
+//        [_alert addButtonWithTitle:@"アプリを見る"];
+//        [_alert addButtonWithTitle:@"キャンセル"];
+//        [_alert show];
+//    }
     
     // 起動回数を1増やす
     [[NSUserDefaults standardUserDefaults]setInteger:numAct + 1 forKey:@"numAct"];
