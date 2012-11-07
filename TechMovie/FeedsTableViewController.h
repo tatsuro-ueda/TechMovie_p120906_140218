@@ -40,6 +40,6 @@
 
 - (IBAction)showSetting:(id)sender;
 - (IBAction)refresh:(id)sender;
-- (IBAction)showInfo:(id)sender;
+- (IBAction)jumpToPaidApp:(id)sender;
 
 @end

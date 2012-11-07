@@ -204,6 +204,9 @@
 		07DC34FF15F8051A00DD97FD /* 120717-AppIcon114x114.png in Resources */ = {isa = PBXBuildFile; fileRef = 07DC34FE15F8051A00DD97FD /* 120717-AppIcon114x114.png */; };
 		07DC350115F8052800DD97FD /* 120717-AppIcon72x72.png in Resources */ = {isa = PBXBuildFile; fileRef = 07DC350015F8052800DD97FD /* 120717-AppIcon72x72.png */; };
 		07DC350315F8052C00DD97FD /* 120717-AppIcon144x144.png in Resources */ = {isa = PBXBuildFile; fileRef = 07DC350215F8052C00DD97FD /* 120717-AppIcon144x144.png */; };
+		07EA5A36164A113D00FF6C59 /* banner_ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 07EA5A35164A113D00FF6C59 /* banner_ipad.png */; };
+		07EA5A37164A113D00FF6C59 /* banner_ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 07EA5A35164A113D00FF6C59 /* banner_ipad.png */; };
+		07EA5A38164A113D00FF6C59 /* banner_ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 07EA5A35164A113D00FF6C59 /* banner_ipad.png */; };
 		07EB1B2A160704D000E8F98D /* iPadMainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07EB1B29160704D000E8F98D /* iPadMainStoryboard.storyboard */; };
 		07EB1B2B160704D000E8F98D /* iPadMainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07EB1B29160704D000E8F98D /* iPadMainStoryboard.storyboard */; };
 		07EB1B2C160704D000E8F98D /* iPadMainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07EB1B29160704D000E8F98D /* iPadMainStoryboard.storyboard */; };
@@ -328,6 +331,7 @@
 		07DC34FE15F8051A00DD97FD /* 120717-AppIcon114x114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "120717-AppIcon114x114.png"; sourceTree = "<group>"; };
 		07DC350015F8052800DD97FD /* 120717-AppIcon72x72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "120717-AppIcon72x72.png"; sourceTree = "<group>"; };
 		07DC350215F8052C00DD97FD /* 120717-AppIcon144x144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "120717-AppIcon144x144.png"; sourceTree = "<group>"; };
+		07EA5A35164A113D00FF6C59 /* banner_ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = banner_ipad.png; sourceTree = "<group>"; };
 		07EB1B29160704D000E8F98D /* iPadMainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPadMainStoryboard.storyboard; sourceTree = "<group>"; };
 		07EB1B2D1607094B00E8F98D /* iPadMainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPadMainStoryboard.storyboard; sourceTree = "<group>"; };
 		07EB1B2F16070DAA00E8F98D /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
@@ -516,6 +520,7 @@
 		07DC338415F7EEC500DD97FD /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				07EA5A35164A113D00FF6C59 /* banner_ipad.png */,
 				070E7ACF1646659800D9D741 /* banner.png */,
 				07744A9B16031229009FC1D6 /* search.png */,
 				07744A9C16031229009FC1D6 /* search@2x.png */,
@@ -760,6 +765,7 @@
 				079CF00F1646340C00C805BF /* 121104-MovieCat144x144.png in Resources */,
 				070E7ACD1646647400D9D741 /* Default-568h@2x.png in Resources */,
 				070E7AD01646659800D9D741 /* banner.png in Resources */,
+				07EA5A36164A113D00FF6C59 /* banner_ipad.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -782,6 +788,7 @@
 				07744AA216031229009FC1D6 /* search@2x.png in Resources */,
 				07EB1B2B160704D000E8F98D /* iPadMainStoryboard.storyboard in Resources */,
 				070E7AD11646659800D9D741 /* banner.png in Resources */,
+				07EA5A37164A113D00FF6C59 /* banner_ipad.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -804,6 +811,7 @@
 				07744AA316031229009FC1D6 /* search@2x.png in Resources */,
 				07EB1B2C160704D000E8F98D /* iPadMainStoryboard.storyboard in Resources */,
 				070E7AD21646659800D9D741 /* banner.png in Resources */,
+				07EA5A38164A113D00FF6C59 /* banner_ipad.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

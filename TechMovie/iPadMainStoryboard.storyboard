@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2549" systemVersion="12B19" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="5qK-1f-V4o">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2843" systemVersion="12C60" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="5qK-1f-V4o">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1498"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1929"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
         <scene sceneID="hiV-Th-kud">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="abf-RO-54o" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController definesPresentationContext="YES" id="5qK-1f-V4o" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="120717-TabIconFire.png" id="4E4-wo-o1Y"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
@@ -19,32 +18,29 @@
                         <segue destination="442-sD-l1Q" kind="relationship" relationship="rootViewController" id="7D3-ba-ojA"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="abf-RO-54o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="14" y="-604"/>
         </scene>
         <!--Feeds Table View Controller - Root View Controller-->
         <scene sceneID="WKO-oA-Lks">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Szo-8L-LbB" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="442-sD-l1Q" customClass="FeedsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="562" sectionHeaderHeight="22" sectionFooterHeight="22" id="qeh-39-7Do">
                         <rect key="frame" x="0.0" y="64" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <adBannerView key="tableHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="kn5-2q-F79">
-                            <rect key="frame" x="0.0" y="0.0" width="768" height="115"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                            <requiredContentSizeIdentifiers>
-                                <string>ADBannerContentSizeLandscape</string>
-                                <string>ADBannerContentSizePortrait</string>
-                            </requiredContentSizeIdentifiers>
+                        <imageView key="tableHeaderView" contentMode="scaleToFill" image="banner_ipad.png" id="Uhr-u7-IVt">
+                            <rect key="frame" x="0.0" y="0.0" width="768" height="120"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <gestureRecognizers/>
                             <connections>
-                                <outlet property="delegate" destination="442-sD-l1Q" id="8pU-1I-Bjc"/>
+                                <outletCollection property="gestureRecognizers" destination="NJJ-UN-6pM" appends="YES" id="Jug-hQ-HKx"/>
                             </connections>
-                        </adBannerView>
+                        </imageView>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="gray" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="562" id="JzN-hx-X6r">
-                                <rect key="frame" x="0.0" y="88" width="768" height="562"/>
+                                <rect key="frame" x="0.0" y="142" width="768" height="562"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="768" height="561"/>
@@ -111,24 +107,28 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="search.png" id="02G-yg-Lf3">
                             <connections>
-                                <action selector="showInfo:" destination="442-sD-l1Q" id="LFH-1p-jTh"/>
+                                <action selector="jumpToPaidApp:" destination="442-sD-l1Q" id="LMr-mG-Gf4"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
                     <connections>
-                        <outlet property="adView" destination="kn5-2q-F79" id="nom-OV-hhx"/>
                         <outlet property="tableView" destination="qeh-39-7Do" id="RdZ-HZ-i33"/>
                         <segue destination="bot-hu-rbv" kind="push" identifier="showWebView" id="nrr-dm-AZu"/>
                     </connections>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Szo-8L-LbB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="NJJ-UN-6pM">
+                    <connections>
+                        <action selector="jumpToPaidApp:" destination="442-sD-l1Q" id="EJk-Bg-ByZ"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="968" y="-604"/>
         </scene>
         <!--Web View Controller-->
         <scene sceneID="TfZ-0d-WuG">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wxB-fz-JHl" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="bot-hu-rbv" customClass="WebViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Mxu-7p-D8J">
                         <rect key="frame" x="0.0" y="64" width="768" height="960"/>
@@ -151,14 +151,14 @@
                                 <rect key="frame" x="364" y="460" width="37" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
-                            <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="5S7-Vb-d0X">
-                                <rect key="frame" x="0.0" y="894" width="768" height="66"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <requiredContentSizeIdentifiers>
-                                    <string>ADBannerContentSizeLandscape</string>
-                                    <string>ADBannerContentSizePortrait</string>
-                                </requiredContentSizeIdentifiers>
-                            </adBannerView>
+                            <imageView contentMode="scaleToFill" image="banner_ipad.png" id="UTf-LO-UaK">
+                                <rect key="frame" x="0.0" y="840" width="768" height="120"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Mq9-dc-Gvb" appends="YES" id="MOe-pI-y6e"/>
+                                </connections>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -171,31 +171,40 @@
                         <outlet property="webView" destination="pu9-Tl-1t6" id="HGN-eG-BzV"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wxB-fz-JHl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Mq9-dc-Gvb">
+                    <connections>
+                        <action selector="jumpToPaidApp:" destination="bot-hu-rbv" id="bYC-ha-eid"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2019" y="-609"/>
         </scene>
     </scenes>
     <resources>
         <image name="120717-TabIconFire.png" width="16" height="16"/>
+        <image name="banner_ipad.png" width="768" height="120"/>
         <image name="search.png" width="20" height="20"/>
     </resources>
     <classes>
         <class className="FeedsTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/FeedsTableViewController.h"/>
             <relationships>
+                <relationship kind="action" name="jumpToPaidApp:"/>
                 <relationship kind="action" name="refresh:"/>
-                <relationship kind="action" name="showInfo:"/>
                 <relationship kind="action" name="showSetting:"/>
                 <relationship kind="outlet" name="adView" candidateClass="ADBannerView"/>
+                <relationship kind="outlet" name="banner" candidateClass="UITableView"/>
                 <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
             </relationships>
         </class>
         <class className="WebViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/WebViewController.h"/>
             <relationships>
+                <relationship kind="action" name="jumpToPaidApp:"/>
                 <relationship kind="outlet" name="actIndicator" candidateClass="UIActivityIndicatorView"/>
                 <relationship kind="outlet" name="actIndicatorBack" candidateClass="UIView"/>
-                <relationship kind="outlet" name="adView" candidateClass="ADBannerView"/>
+                <relationship kind="outlet" name="banner" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
             </relationships>
         </class>

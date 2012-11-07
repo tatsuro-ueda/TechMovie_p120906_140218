@@ -18,7 +18,6 @@
 @synthesize URLForSegue;
 @synthesize actIndicatorBack;
 @synthesize actIndicator;
-@synthesize adView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -62,25 +61,23 @@
     [self setWebView:nil];
     [self setActIndicatorBack:nil];
     [self setActIndicator:nil];
-    [self setAdView:nil];
+    [self setBanner:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    NSInteger numAct = [[NSUserDefaults standardUserDefaults] integerForKey:@"numAct"];
+    if (numAct < 5) {
+        _banner.hidden = YES;
+    }
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     // 動画なので回転に対応するが上下反対はアウト
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
-}
-
-- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
-{
-    if (UIInterfaceOrientationIsLandscape(toInterfaceOrientation)) {
-        self.adView.currentContentSizeIdentifier = ADBannerContentSizeIdentifierLandscape;
-    }
-    else {
-        self.adView.currentContentSizeIdentifier = ADBannerContentSizeIdentifierPortrait;
-    }
 }
 
 - (void)webViewDidStartLoad:(UIWebView *)webView
@@ -104,20 +101,6 @@
     return YES;
 }
 
-- (void)bannerViewDidLoadAd:(ADBannerView *)banner
-{
-    if (self.adView.hidden) {
-        self.adView.hidden = NO;
-    }
-}
-
-- (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error
-{
-    if (self.adView.hidden == NO) {
-        self.adView.hidden = YES;
-    }
-}
-
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     if (alertView == _alert)
@@ -125,12 +108,8 @@
         [self.navigationController popViewControllerAnimated:YES];
     }
 }
-
--(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
-{
-    UITouch *touch = [[event allTouches] anyObject];
-    if ( touch.view.tag == 1 )
-        [[UIApplication sharedApplication] openURL: [NSURL URLWithString:URLPayed]];
+- (IBAction)jumpToPaidApp:(id)sender {
+    [[UIApplication sharedApplication] openURL: [NSURL URLWithString:URLPayed]];
 }
 
 @end

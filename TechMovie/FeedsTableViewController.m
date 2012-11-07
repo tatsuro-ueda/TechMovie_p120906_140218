@@ -79,10 +79,7 @@ static NSInteger dateDescending(id item1, id item2, void *context)
     // requestTableDataメソッドを呼び出すという通知要求の登録を行っている。
     NSString *requestTableData = [NSString stringWithFormat:@"requestTableData"];
     [nc addObserver:self selector:@selector(requestTableData) name:requestTableData object:nil];
-
-    UITapGestureRecognizer *myTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(gestureTapEvent:)];
-    _banner.userInteractionEnabled = YES;
-    [_banner addGestureRecognizer:myTapGesture];}
+}
 
 - (void)viewDidUnload
 {
@@ -135,6 +132,11 @@ static NSInteger dateDescending(id item1, id item2, void *context)
         [[NSUserDefaults standardUserDefaults] setBool:NO forKey:didGoToWebView];
     }
 #endif
+    
+    NSInteger numAct = [[NSUserDefaults standardUserDefaults] integerForKey:@"numAct"];
+    if (numAct < 5) {
+        _banner.hidden = YES;
+    }
 }
 
 - (void)requestTableData
@@ -512,8 +514,6 @@ static NSInteger dateDescending(id item1, id item2, void *context)
         controller.hidesBottomBarWhenPushed = YES;
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:didGoToWebView];
     }
-//    else if ([segue.identifier isEqualToString:@"showSetting"]) {
-//    }
 }
 
 - (IBAction)showSetting:(id)sender {
@@ -524,17 +524,8 @@ static NSInteger dateDescending(id item1, id item2, void *context)
     [self requestTableData];
 }
 
-- (IBAction)showInfo:(id)sender {
+- (IBAction)jumpToPaidApp:(id)sender {
     [[UIApplication sharedApplication] openURL: [NSURL URLWithString:URLPayed]];
-
-    _infoAlertView = [[UIAlertView alloc] init];
-    _infoAlertView.title = [NSString stringWithFormat:@"ご案内"];
-    _infoAlertView.message = InfoPayed;
-    _infoAlertView.delegate = self;
-    [_infoAlertView addButtonWithTitle:@"アプリを見る"];
-    [_infoAlertView addButtonWithTitle:@"キャンセル"];
-    [_infoAlertView show];
-
 }
 
 - (BOOL)bannerViewActionShouldBegin:(ADBannerView *)banner willLeaveApplication:(BOOL)willLeave

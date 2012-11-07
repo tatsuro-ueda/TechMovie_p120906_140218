@@ -23,6 +23,10 @@
                             <imageView tag="1" contentMode="scaleToFill" image="banner.png" id="oMK-6I-h1O">
                                 <rect key="frame" x="0.0" y="366" width="320" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="i0Q-Kj-YKk" appends="YES" id="xdU-9d-nkK"/>
+                                </connections>
                             </imageView>
                             <view userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" id="Vaz-Mu-bkl">
                                 <rect key="frame" x="115" y="163" width="90" height="90"/>
@@ -40,10 +44,16 @@
                     <connections>
                         <outlet property="actIndicator" destination="yO3-Mf-jn5" id="V2K-i3-dLT"/>
                         <outlet property="actIndicatorBack" destination="Vaz-Mu-bkl" id="STY-Wi-n37"/>
+                        <outlet property="banner" destination="oMK-6I-h1O" id="9LO-RC-Bsk"/>
                         <outlet property="webView" destination="u8I-sZ-q8o" id="YCd-Ny-xVR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Qz-dc-d09" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="i0Q-Kj-YKk">
+                    <connections>
+                        <action selector="jumpToPaidApp:" destination="hfH-5Q-2Ez" id="aNQ-OJ-SQA"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1086" y="-604"/>
         </scene>
@@ -143,7 +153,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rB5-qG-Uhc" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="VsD-QE-6zR">
                     <connections>
-                        <action selector="showInfo:" destination="YV9-Ku-PBf" id="mlJ-t9-7ST"/>
+                        <action selector="jumpToPaidApp:" destination="YV9-Ku-PBf" id="4V9-Fh-BTl"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -170,28 +180,6 @@
     <resources>
         <image name="banner.png" width="640" height="100"/>
     </resources>
-    <classes>
-        <class className="FeedsTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FeedsTableViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="refresh:"/>
-                <relationship kind="action" name="showInfo:"/>
-                <relationship kind="action" name="showSetting:"/>
-                <relationship kind="outlet" name="adView" candidateClass="ADBannerView"/>
-                <relationship kind="outlet" name="banner" candidateClass="UITableView"/>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="WebViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WebViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="actIndicator" candidateClass="UIActivityIndicatorView"/>
-                <relationship kind="outlet" name="actIndicatorBack" candidateClass="UIView"/>
-                <relationship kind="outlet" name="adView" candidateClass="ADBannerView"/>
-                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

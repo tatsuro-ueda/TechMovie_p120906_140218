@@ -18,5 +18,8 @@
 @property NSURL *URLForSegue;
 @property (strong, nonatomic) IBOutlet UIView *actIndicatorBack;
 @property (strong, nonatomic) IBOutlet UIActivityIndicatorView *actIndicator;
-@property (strong, nonatomic) IBOutlet ADBannerView *adView;
+@property (strong, nonatomic) IBOutlet UIImageView *banner;
+
+- (IBAction)jumpToPaidApp:(id)sender;
+
 @end
