@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2549" systemVersion="12B19" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="laB-kR-ygi">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C60" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="laB-kR-ygi">
     <dependencies>
-        <deployment defaultVersion="1296" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1498"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
         <scene sceneID="guL-RP-yH4">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="J0c-4u-V2C" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController definesPresentationContext="YES" id="laB-kR-ygi" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="120717-TabIconFire.png" id="nON-ay-sdx"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
@@ -19,13 +17,13 @@
                         <segue destination="hCb-tS-D5y" kind="relationship" relationship="rootViewController" id="rNV-fg-2J6"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J0c-4u-V2C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="14" y="-604"/>
         </scene>
         <!--Feeds Table View Controller - Root View Controller-->
         <scene sceneID="5g6-Ap-W77">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mUn-fG-oFb" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="hCb-tS-D5y" customClass="FeedsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="562" sectionHeaderHeight="22" sectionFooterHeight="22" id="wul-Hr-y0x">
                         <rect key="frame" x="0.0" y="64" width="768" height="960"/>
@@ -106,18 +104,19 @@
                     </navigationItem>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
                     <connections>
+                        <outlet property="refreshButton" destination="xNg-Ng-sT4" id="0J0-RK-EZN"/>
                         <outlet property="tableView" destination="wul-Hr-y0x" id="e4Q-X4-a89"/>
                         <segue destination="0IB-pE-iVz" kind="push" identifier="showWebView" id="zJX-bk-5NY"/>
                         <segue destination="2Uo-9M-qpI" kind="modal" identifier="showSetting" modalTransitionStyle="partialCurl" id="Glg-8V-lhn"/>
                     </connections>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mUn-fG-oFb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="968" y="-604"/>
         </scene>
         <!--Web View Controller-->
         <scene sceneID="6KC-qv-PuO">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gVU-Vq-pnY" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="0IB-pE-iVz" customClass="WebViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6d4-2A-EeM">
                         <rect key="frame" x="0.0" y="64" width="768" height="960"/>
@@ -152,13 +151,13 @@
                         <outlet property="webView" destination="ek9-Ni-rJ7" id="HMv-SF-hqI"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gVU-Vq-pnY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2055" y="7"/>
         </scene>
         <!--Setting View Controller-->
         <scene sceneID="NYZ-lr-M3i">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hcZ-w4-dgp" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="2Uo-9M-qpI" customClass="SettingViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="R2c-Rf-fj7">
                         <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
@@ -260,6 +259,7 @@
                         <outlet property="tagFieldJapanese" destination="xqT-be-643" id="qxU-en-nJG"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hcZ-w4-dgp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2055" y="-1340"/>
         </scene>
@@ -268,6 +268,41 @@
         <image name="120717-TabIconFire.png" width="16" height="16"/>
         <image name="search.png" width="20" height="20"/>
     </resources>
+    <classes>
+        <class className="FeedsTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FeedsTableViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="jumpToPaidApp:"/>
+                <relationship kind="action" name="refresh:"/>
+                <relationship kind="action" name="showSetting:"/>
+                <relationship kind="outlet" name="adView" candidateClass="ADBannerView"/>
+                <relationship kind="outlet" name="banner" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="refreshButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="SettingViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="add:"/>
+                <relationship kind="action" name="delete:"/>
+                <relationship kind="action" name="ok:"/>
+                <relationship kind="outlet" name="pickerView" candidateClass="UIPickerView"/>
+                <relationship kind="outlet" name="tagFieldEnglish" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="tagFieldJapanese" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="WebViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/WebViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="jumpToPaidApp:"/>
+                <relationship kind="outlet" name="actIndicator" candidateClass="UIActivityIndicatorView"/>
+                <relationship kind="outlet" name="actIndicatorBack" candidateClass="UIView"/>
+                <relationship kind="outlet" name="banner" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>

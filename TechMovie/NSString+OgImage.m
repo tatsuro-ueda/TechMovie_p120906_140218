@@ -56,7 +56,7 @@
 + (NSString *)ogImageURLWithNicoDescription:(NSString *)str
 {
     /*
-     * og:image Check for Vimeo
+     * og:image Check for Niconico Douga
      */
     // prepare regular expression to find text
     NSError *error   = nil;

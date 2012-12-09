@@ -79,6 +79,9 @@ static NSInteger dateDescending(id item1, id item2, void *context)
     // requestTableDataメソッドを呼び出すという通知要求の登録を行っている。
     NSString *requestTableData = [NSString stringWithFormat:@"requestTableData"];
     [nc addObserver:self selector:@selector(requestTableData) name:requestTableData object:nil];
+
+    NSString *EnableRefreshBotton = [NSString stringWithFormat:@"EnableRefreshBotton"];
+    [nc addObserver:self selector:@selector(enableRefreshBotton) name:EnableRefreshBotton object:nil];
 }
 
 - (void)viewDidUnload
@@ -87,6 +90,8 @@ static NSInteger dateDescending(id item1, id item2, void *context)
     [self setItemsArray:nil];
     [self setAdView:nil];
     [self setBanner:nil];
+    [self setRefreshButton:nil];
+    [self setBannerImageView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -124,7 +129,6 @@ static NSInteger dateDescending(id item1, id item2, void *context)
     if (![[GANTracker sharedTracker] trackPageview:trackPageTitle withError:&error]) {
         // エラーハンドリング
     }
-#define FREE
 #ifdef FREE
     // WebViewからの戻りならフラグを元に戻す
     BOOL b = [[NSUserDefaults standardUserDefaults] boolForKey:didGoToWebView];
@@ -134,13 +138,19 @@ static NSInteger dateDescending(id item1, id item2, void *context)
 #endif
     
     NSInteger numAct = [[NSUserDefaults standardUserDefaults] integerForKey:@"numAct"];
-    if (numAct < 5) {
-        _banner.hidden = YES;
+    if (5 < numAct) {
+        _bannerImageView.image = [UIImage imageNamed:@"banner.png"];
     }
 }
 
 - (void)requestTableData
 {
+    NSLog(@"FeedsTableViewController.m: #requestTableData");
+    if (!_refreshButton.enabled) {
+        return;
+    }
+    _refreshButton.enabled = NO;
+    
     // URLの配列を作成するためユーザーデフォルトからキーワードを読み込む
     NSString *keywordPlainString0 = [[NSUserDefaults standardUserDefaults] objectForKey:@"keyword0"];
     NSString *keywordPlainString1 = [[NSUserDefaults standardUserDefaults] objectForKey:@"keyword1"];
@@ -169,7 +179,7 @@ static NSInteger dateDescending(id item1, id item2, void *context)
     weakOperation = operation;
     [operation addExecutionBlock:^{
         /*
-         * Yahoo Pipesに問い合わせるURLをつくる
+         * サーバーに問い合わせるURLをつくる
          */
         NSString *escapedUrlString0 = [keywordPlainString0
                                        stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
@@ -189,6 +199,7 @@ static NSInteger dateDescending(id item1, id item2, void *context)
 #endif
         
         // urlArrayをつくる
+        // RSSリーダーの名残
         NSArray *urls = [NSArray arrayWithObject:myPipeURLString];
         NSMutableArray *urlArray = [NSMutableArray array];
         for (NSString *str in urls) {
@@ -224,7 +235,7 @@ static NSInteger dateDescending(id item1, id item2, void *context)
         if (successful) {
             NSLog(@"%@", @"データの保存に成功しました。");
         }
-                
+        
         // メインスレッドに戻す
         NSOperationQueue *mainQueue = [NSOperationQueue mainQueue];
         [mainQueue addOperationWithBlock:^{
@@ -419,8 +430,8 @@ static NSInteger dateDescending(id item1, id item2, void *context)
 - (NSArray *)itemsArrayFromContentsOfURL:(NSURL *)url fileName:(NSString *)fileName performer:(id)performer
 {
     NSMutableArray *newArray = [NSMutableArray arrayWithCapacity:0];
-    _parser = [[RSSParser alloc] init];
-    
+    self.parser = [[RSSParser alloc] init];
+
     // URLから読み込む
     if ([_parser parseContentsOfURL:url progressView:_progressView fileName:fileName performer:performer]) {
         
@@ -525,7 +536,10 @@ static NSInteger dateDescending(id item1, id item2, void *context)
 }
 
 - (IBAction)jumpToPaidApp:(id)sender {
-    [[UIApplication sharedApplication] openURL: [NSURL URLWithString:URLPayed]];
+    NSInteger numAct = [[NSUserDefaults standardUserDefaults] integerForKey:@"numAct"];
+    if (5 < numAct) {
+        [[UIApplication sharedApplication] openURL: [NSURL URLWithString:URLPayed]];
+    }
 }
 
 - (BOOL)bannerViewActionShouldBegin:(ADBannerView *)banner willLeaveApplication:(BOOL)willLeave
@@ -570,7 +584,7 @@ static NSInteger dateDescending(id item1, id item2, void *context)
 {
     float progress = _progressView.progress;
     if (progress < 0.9) {
-        _progressView.progress += 0.002;
+        _progressView.progress += 0.001;
     }
     else
     {
@@ -600,6 +614,16 @@ static NSInteger dateDescending(id item1, id item2, void *context)
         [weakOperation cancel];
     }
     // さもなくば残りの情報を待つ
+}
+
+- (void)enableRefreshBotton
+{
+    // メインスレッドに戻す
+    NSOperationQueue *mainQueue = [NSOperationQueue mainQueue];
+    [mainQueue addOperationWithBlock:^{
+        _refreshButton.enabled = YES;
+    }];
+    NSLog(@"FeedTableController.m: #enableRefreshButton");
 }
 
 @end

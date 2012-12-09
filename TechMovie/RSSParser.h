@@ -13,7 +13,6 @@
 {
     UIProgressView  *_progressView;
     int             _totalLines;
-    NSArray         *_oldFeeds;
     BOOL            _newEntryComes;
     id              _performer;
 }
@@ -26,6 +25,8 @@
 @property (strong, nonatomic) NSMutableArray *elementStack;
 @property (strong, nonatomic) RSSEntry *curEntry;
 @property float realProgress;
+@property NSArray *oldFeeds;
+
 
 - (BOOL)parseContentsOfURL:(NSURL *)url progressView:(UIProgressView *)progressView fileName:(NSString *)fileName performer:(id)performer;
 - (NSDate *)pubDateWithString:(NSString *)string;

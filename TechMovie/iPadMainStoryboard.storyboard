@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2843" systemVersion="12C60" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="5qK-1f-V4o">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C60" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="5qK-1f-V4o">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1929"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -30,7 +30,7 @@
                         <rect key="frame" x="0.0" y="64" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <imageView key="tableHeaderView" contentMode="scaleToFill" image="banner_ipad.png" id="Uhr-u7-IVt">
+                        <imageView key="tableHeaderView" contentMode="scaleToFill" image="121209-bannerOff.png" id="Uhr-u7-IVt">
                             <rect key="frame" x="0.0" y="0.0" width="768" height="120"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <gestureRecognizers/>
@@ -113,6 +113,8 @@
                     </navigationItem>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
                     <connections>
+                        <outlet property="bannerImageView" destination="Uhr-u7-IVt" id="ZPn-Tl-1Nk"/>
+                        <outlet property="refreshButton" destination="m7P-dU-lSk" id="dLR-Ov-jxw"/>
                         <outlet property="tableView" destination="qeh-39-7Do" id="RdZ-HZ-i33"/>
                         <segue destination="bot-hu-rbv" kind="push" identifier="showWebView" id="nrr-dm-AZu"/>
                     </connections>
@@ -183,7 +185,8 @@
     </scenes>
     <resources>
         <image name="120717-TabIconFire.png" width="16" height="16"/>
-        <image name="banner_ipad.png" width="768" height="120"/>
+        <image name="121209-bannerOff.png" width="559" height="68"/>
+        <image name="banner_ipad.png" width="16" height="16"/>
         <image name="search.png" width="20" height="20"/>
     </resources>
     <classes>
@@ -195,6 +198,8 @@
                 <relationship kind="action" name="showSetting:"/>
                 <relationship kind="outlet" name="adView" candidateClass="ADBannerView"/>
                 <relationship kind="outlet" name="banner" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="bannerImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="refreshButton" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
             </relationships>
         </class>

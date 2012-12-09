@@ -51,7 +51,16 @@
     
     // XMLパーサーの準備
     NSXMLParser *parser;
+    NSLog(@"RSSParser.m: parser init");
     parser = [[NSXMLParser alloc] initWithContentsOfURL:url];
+    NSLog(@"RSSParser.m: parser init done");
+
+    // 通知を作成する
+    NSString *EnableRefreshBotton = [NSString stringWithFormat:@"EnableRefreshBotton"];
+    NSNotification *n = [NSNotification notificationWithName:EnableRefreshBotton object:self];
+    // 通知実行！
+    [[NSNotificationCenter defaultCenter] postNotification:n];
+
     parser.delegate = self;
     
     // エントリーを入れる配列をクリアする
@@ -73,7 +82,7 @@
     NSString *oldFileName = [NSString stringWithFormat:@"%@", fileName];
     NSString *filePath = [directory stringByAppendingPathComponent:oldFileName];
     @try {
-        _oldFeeds = [NSKeyedUnarchiver unarchiveObjectWithFile:filePath];
+        self.oldFeeds = [NSKeyedUnarchiver unarchiveObjectWithFile:filePath];
     }
     @catch (NSException *exception) {
         UIAlertView *alertView = [[UIAlertView alloc] init];
@@ -132,6 +141,7 @@ didStartElement:(NSString *)elementName
 {
     // 「キャンセル」されたら止める
     if([_performer weakOperation].isCancelled){
+        parser.delegate = nil;
         return;
     }
     
@@ -203,6 +213,7 @@ didStartElement:(NSString *)elementName
 {
     // 「キャンセル」されたら止める
     if([_performer weakOperation].isCancelled){
+        
         return;
     }
 
