@@ -6,6 +6,10 @@
 //  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
 //
 
+/*
+ UML図の「NSString+Encodeカテゴリのアクティビティ図」を参照してください
+ */
+
 #import <Foundation/Foundation.h>
 
 @interface NSString (Encode)

@@ -17,8 +17,11 @@
 #import "Const.h"
 
 #define TEST
+#define FREE
 
-const NSString *kStrURLPipesWith2Keywords = @"http://p120908-new-movies-server.herokuapp.com/new_movie?";
+//const NSString *kStrURLPipesWith2Keywords = @"http://p120908-new-movies-server.herokuapp.com/new_movie?";
+const NSString *kStrURLPipesWith2Keywords =
+@"http://pipes.yahoo.com/pipes/pipe.run?_id=d6736f52235d6c16befbf95d7320fd1e&_render=rss&";
 const NSString *kStrURLPipesWith1Keyword = @"http://p120908-new-movies-server.herokuapp.com/new_movie?";
 
 // リストアイテムのソート用関数
@@ -192,7 +195,14 @@ static NSInteger dateDescending(id item1, id item2, void *context)
         else{
             escapedUrlString1 = [keywordPlainString1 stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
             myPipeURLString =
+            /*
+             オリジナル
             [NSString stringWithFormat:@"%@&tag1=%@&tag2=%@", kStrURLPipesWith2Keywords, escapedUrlString0, escapedUrlString1];
+             */
+            /*
+             Yahoo Pipes用
+             */
+            [NSString stringWithFormat:@"%@&tag0=%@&tag1=%@", kStrURLPipesWith2Keywords, escapedUrlString0, escapedUrlString1];
         }
 #ifdef TEST
         NSLog(@"%@", myPipeURLString);

@@ -73,16 +73,16 @@
 {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
 
-//    if (![[NSUserDefaults standardUserDefaults] boolForKey:didGoToWebView]) {
-//        // 通知を作成する
-    NSString *requestTableData = [NSString stringWithFormat:@"requestTableData"];
-    NSNotification *n = [NSNotification notificationWithName:requestTableData object:self];
-    
-    // 通知実行！
-    [[NSNotificationCenter defaultCenter] postNotification:n];
-    
-//    NSLog(@"AppDelegate.m: #applicationDidBecomeActive");
-//    }
+    if (![[NSUserDefaults standardUserDefaults] boolForKey:didGoToWebView]) {
+        // 通知を作成する
+        NSString *requestTableData = [NSString stringWithFormat:@"requestTableData"];
+        NSNotification *n = [NSNotification notificationWithName:requestTableData object:self];
+        
+        // 通知実行！
+        [[NSNotificationCenter defaultCenter] postNotification:n];
+        
+        NSLog(@"AppDelegate.m: #applicationDidBecomeActive");
+    }
 
     // 起動回数を見る
     NSInteger numAct = [[NSUserDefaults standardUserDefaults]integerForKey:@"numAct"];
