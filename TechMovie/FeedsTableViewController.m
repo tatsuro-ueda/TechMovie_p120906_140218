@@ -13,7 +13,7 @@
 #import "UIImageView+AFNetworking.h"
 #import "AFJSONRequestOperation.h"
 #import "UIImage+GIF.h"
-#import "GANTracker.h"
+//#import "GANTracker.h"
 #import "Const.h"
 
 #define TEST
@@ -126,12 +126,14 @@ static NSInteger dateDescending(id item1, id item2, void *context)
     // ナビゲーションバーの表示を変更する
     [self reloadNavBarTitleWithString:keywordPlainString0];
     
+    /*
     // Google Analytics
     NSString *trackPageTitle = [NSString stringWithFormat:@"/tableView/%@", keywordPlainString0];
     NSError *error;
     if (![[GANTracker sharedTracker] trackPageview:trackPageTitle withError:&error]) {
         // エラーハンドリング
     }
+     */
 #ifdef FREE
     // WebViewからの戻りならフラグを元に戻す
     BOOL b = [[NSUserDefaults standardUserDefaults] boolForKey:didGoToWebView];
@@ -284,12 +286,14 @@ static NSInteger dateDescending(id item1, id item2, void *context)
             [alertView addButtonWithTitle:@"OK"];
             [alertView show];
             
+            /*
             // Google Analytics
             NSString *trackPageTitle = [NSString stringWithFormat:@"/alertView/%@:%d", keywordPlainString0, numNewEntry];
             NSError *error;
             if (![[GANTracker sharedTracker] trackPageview:trackPageTitle withError:&error]) {
                 // エラーハンドリング
             }
+             */
         }];
     }];
     

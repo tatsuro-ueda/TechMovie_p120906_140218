@@ -28,10 +28,6 @@
 		073DA45B16014254003D06C9 /* 120913-CatAppIcon72x72.png in Resources */ = {isa = PBXBuildFile; fileRef = 073DA45A16014254003D06C9 /* 120913-CatAppIcon72x72.png */; };
 		073DA45D16014258003D06C9 /* 120913-CatAppIcon144x144.png in Resources */ = {isa = PBXBuildFile; fileRef = 073DA45C16014258003D06C9 /* 120913-CatAppIcon144x144.png */; };
 		073DA45F16014286003D06C9 /* 120913-CatAppIcon57x57.png in Resources */ = {isa = PBXBuildFile; fileRef = 073DA45E16014286003D06C9 /* 120913-CatAppIcon57x57.png */; };
-		075F3D2716428EE0005D272F /* libGoogleAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 075F3D2616428EE0005D272F /* libGoogleAnalytics.a */; };
-		075F3D2816428EE0005D272F /* libGoogleAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 075F3D2616428EE0005D272F /* libGoogleAnalytics.a */; };
-		075F3D2916428EE0005D272F /* libGoogleAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 075F3D2616428EE0005D272F /* libGoogleAnalytics.a */; };
-		075F3D2A16428EE0005D272F /* libGoogleAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 075F3D2616428EE0005D272F /* libGoogleAnalytics.a */; };
 		076AD79D15F9DEAB00A06E44 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 076AD79C15F9DEAB00A06E44 /* SystemConfiguration.framework */; };
 		076AD79E15F9DEBC00A06E44 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 076AD79C15F9DEAB00A06E44 /* SystemConfiguration.framework */; };
 		076AD79F15F9DEBD00A06E44 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 076AD79C15F9DEAB00A06E44 /* SystemConfiguration.framework */; };
@@ -232,8 +228,6 @@
 		073DA45A16014254003D06C9 /* 120913-CatAppIcon72x72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "120913-CatAppIcon72x72.png"; sourceTree = "<group>"; };
 		073DA45C16014258003D06C9 /* 120913-CatAppIcon144x144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "120913-CatAppIcon144x144.png"; sourceTree = "<group>"; };
 		073DA45E16014286003D06C9 /* 120913-CatAppIcon57x57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "120913-CatAppIcon57x57.png"; sourceTree = "<group>"; };
-		075F3D2516428EE0005D272F /* GANTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GANTracker.h; sourceTree = "<group>"; };
-		075F3D2616428EE0005D272F /* libGoogleAnalytics.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalytics.a; sourceTree = "<group>"; };
 		076AD79C15F9DEAB00A06E44 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		076C6520160C449A00014F49 /* NSString+OgImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+OgImage.h"; sourceTree = "<group>"; };
 		076C6521160C449A00014F49 /* NSString+OgImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+OgImage.m"; sourceTree = "<group>"; };
@@ -360,7 +354,6 @@
 				07DC337E15F7EEC500DD97FD /* UIKit.framework in Frameworks */,
 				07DC338015F7EEC500DD97FD /* Foundation.framework in Frameworks */,
 				07DC338215F7EEC500DD97FD /* CoreGraphics.framework in Frameworks */,
-				075F3D2716428EE0005D272F /* libGoogleAnalytics.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,7 +370,6 @@
 				07DC343F15F7F60E00DD97FD /* CFNetwork.framework in Frameworks */,
 				07DC344015F7F61300DD97FD /* libsqlite3.0.dylib in Frameworks */,
 				076AD79E15F9DEBC00A06E44 /* SystemConfiguration.framework in Frameworks */,
-				075F3D2816428EE0005D272F /* libGoogleAnalytics.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,7 +386,6 @@
 				07DC349015F8017300DD97FD /* CFNetwork.framework in Frameworks */,
 				07DC349115F8017800DD97FD /* libsqlite3.0.dylib in Frameworks */,
 				076AD79F15F9DEBD00A06E44 /* SystemConfiguration.framework in Frameworks */,
-				075F3D2916428EE0005D272F /* libGoogleAnalytics.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,31 +402,16 @@
 				07DC34D015F8034800DD97FD /* CFNetwork.framework in Frameworks */,
 				07DC34D115F8034C00DD97FD /* libsqlite3.0.dylib in Frameworks */,
 				076AD7A015F9DEBE00A06E44 /* SystemConfiguration.framework in Frameworks */,
-				075F3D2A16428EE0005D272F /* libGoogleAnalytics.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		075F3D2416428EE0005D272F /* Library */ = {
-			isa = PBXGroup;
-			children = (
-				075F3D2516428EE0005D272F /* GANTracker.h */,
-				075F3D2616428EE0005D272F /* libGoogleAnalytics.a */,
-			);
-			path = Library;
-			sourceTree = "<group>";
-		};
-		07DC336E15F7EEC500DD97FD = {
+		07D9415F18E4F0E40084D702 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 				070E7ACC1646647400D9D741 /* Default-568h@2x.png */,
-				079CF00E1646340C00C805BF /* 121104-MovieCat144x144.png */,
-				079CF00C1646340800C805BF /* 121104-MovieCat72x72.png */,
-				079CF00A1646340100C805BF /* 121104-MovieCat114x114.png */,
-				079CF007164633FD00C805BF /* 121104-MovieCat57x57.png */,
-				075F3D2416428EE0005D272F /* Library */,
 				07EB1B3916070DC100E8F98D /* Default-Landscape@2x~ipad.png */,
 				07EB1B3716070DBD00E8F98D /* Default-Landscape~ipad.png */,
 				07EB1B3516070DB700E8F98D /* Default-Portrait@2x~ipad.png */,
@@ -450,6 +426,18 @@
 				07DC350015F8052800DD97FD /* 120717-AppIcon72x72.png */,
 				07DC34FE15F8051A00DD97FD /* 120717-AppIcon114x114.png */,
 				07DC34FC15F8051700DD97FD /* 120717-AppIcon57x57.png */,
+				079CF00E1646340C00C805BF /* 121104-MovieCat144x144.png */,
+				079CF00C1646340800C805BF /* 121104-MovieCat72x72.png */,
+				079CF00A1646340100C805BF /* 121104-MovieCat114x114.png */,
+				079CF007164633FD00C805BF /* 121104-MovieCat57x57.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		07DC336E15F7EEC500DD97FD = {
+			isa = PBXGroup;
+			children = (
+				07D9415F18E4F0E40084D702 /* Resources */,
 				07DC339E15F7EF3000DD97FD /* AFNetworking */,
 				07DC338315F7EEC500DD97FD /* TechMovie */,
 				07DC340D15F7F48900DD97FD /* MovieMilitary */,

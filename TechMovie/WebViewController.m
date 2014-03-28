@@ -48,12 +48,14 @@
         [_alert show];
     }
     
+    /*
     // Google Analytics
     NSString *trackPageTitle = [NSString stringWithFormat:@"%@", self.URLForSegue];
     NSError *error;
     if (![[GANTracker sharedTracker] trackPageview:trackPageTitle withError:&error]) {
         // エラーハンドリング
     }
+     */
 }
 
 - (void)viewDidUnload

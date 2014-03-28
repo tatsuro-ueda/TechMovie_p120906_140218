@@ -8,7 +8,7 @@
 
 #import "SettingViewController.h"
 #import "FeedsTableViewController.h"
-#import "GANTracker.h"
+//#import "GANTracker.h"
 #import "Const.h"
 
 @interface SettingViewController ()

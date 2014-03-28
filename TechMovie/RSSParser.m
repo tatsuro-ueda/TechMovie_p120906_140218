@@ -131,6 +131,15 @@ didStartElement:(NSString *)elementName
             _progressView.progress = _realProgress;
         }
     }];
+    
+    if ([elementName isEqualToString:@"enclosure"])
+    /*
+     vimeoのURLはenclosureタグのurl属性に書かれている
+     まずはこのurlを取り出したい
+     */
+    {
+        NSLog(@"%@", attributeDict[@"url"]);
+    }
 }
 
 // エレメント終了時の処理
@@ -150,21 +159,25 @@ didStartElement:(NSString *)elementName
     
     // 終了したエレメントの名前が「item」で現在解析中のエントリーがある場合は、
     // 配列「_entries」に追加して、解放する
-    if ([elementName isEqualToString:@"item"] && self.curEntry) {
-        
+    if ([elementName isEqualToString:@"item"] && self.curEntry)
+    {
         [self.entries addObject:_curEntry];
         self.curEntry = nil;
-    } else if ([elementName isEqualToString:@"description"]) {
+    }
+    else if ([elementName isEqualToString:@"description"])
+    {
         //ogImageを抜き出す
-        if ([[self elementPath] isEqualToString:@"/rss/channel/item"]) {
+        if ([[self elementPath] isEqualToString:@"/rss/channel/item"])
+        {
             NSString *str = [self currentEntry].text;
-            NSLog(@"%@", str);
             //ogImageを抜き出す
             [self currentEntry].ogImageURL = [NSURL ogImageURLWithVimeoDescription:str];
-            if (![self currentEntry].ogImageURL) {
+            if (![self currentEntry].ogImageURL)
+            {
                 [self currentEntry].ogImageURL = [NSURL ogImageURLWithNicoDescription:str];
             }
-            if (![self currentEntry].ogImageURL) {
+            if (![self currentEntry].ogImageURL)
+            {
                 NSLog(@"ogImageURL: %@", [self currentEntry].ogImageURL);
                 [self currentEntry].ogImageURL = [NSURL ogImageURLWithURL:[self currentEntry].url];
             }
