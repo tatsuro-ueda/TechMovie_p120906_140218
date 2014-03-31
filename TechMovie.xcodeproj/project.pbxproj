@@ -48,7 +48,6 @@
 		079CF00B1646340100C805BF /* 121104-MovieCat114x114.png in Resources */ = {isa = PBXBuildFile; fileRef = 079CF00A1646340100C805BF /* 121104-MovieCat114x114.png */; };
 		079CF00D1646340800C805BF /* 121104-MovieCat72x72.png in Resources */ = {isa = PBXBuildFile; fileRef = 079CF00C1646340800C805BF /* 121104-MovieCat72x72.png */; };
 		079CF00F1646340C00C805BF /* 121104-MovieCat144x144.png in Resources */ = {isa = PBXBuildFile; fileRef = 079CF00E1646340C00C805BF /* 121104-MovieCat144x144.png */; };
-		07D9416118E512E10084D702 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 07D9416018E512E10084D702 /* libPods.a */; };
 		07DC337E15F7EEC500DD97FD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07DC337D15F7EEC500DD97FD /* UIKit.framework */; };
 		07DC338015F7EEC500DD97FD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07DC337F15F7EEC500DD97FD /* Foundation.framework */; };
 		07DC338215F7EEC500DD97FD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07DC338115F7EEC500DD97FD /* CoreGraphics.framework */; };
@@ -335,7 +334,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07D9416118E512E10084D702 /* libPods.a in Frameworks */,
 				07DC349815F8025F00DD97FD /* UIKit.framework in Frameworks */,
 				07DC349915F8025F00DD97FD /* Foundation.framework in Frameworks */,
 				07DC349A15F8025F00DD97FD /* CoreGraphics.framework in Frameworks */,

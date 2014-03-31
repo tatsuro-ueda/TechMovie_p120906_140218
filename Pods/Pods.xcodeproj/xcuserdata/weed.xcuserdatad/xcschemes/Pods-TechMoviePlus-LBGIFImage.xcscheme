@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0500"
+   LastUpgradeVersion = "0510"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F052E39A0E114B9580BCC151"
+               BlueprintIdentifier = "94C17A2F04E44222808A00F3"
                BuildableName = "libPods-TechMoviePlus-LBGIFImage.a"
                BlueprintName = "Pods-TechMoviePlus-LBGIFImage"
                ReferencedContainer = "container:Pods.xcodeproj">
