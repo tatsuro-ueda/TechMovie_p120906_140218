@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "GANTracker.h"
+//#import "GANTracker.h"
 #import "Const.h"
 
 @implementation AppDelegate
@@ -24,10 +24,12 @@
         [[NSUserDefaults standardUserDefaults] setObject:@"cat" forKey:@"keyword1"];
     }
     
+    /*
     // Google Analytics
     [[GANTracker sharedTracker] startTrackerWithAccountID:@"UA-34212098-1"
                                            dispatchPeriod:10
                                                  delegate:nil];
+     */
     return YES;
 }
 
@@ -36,12 +38,14 @@
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
     
+    /*
     // Google Analytics
     NSString *trackPageTitle = [NSString stringWithFormat:@"/appWillResignActive"];
     NSError *error;
     if (![[GANTracker sharedTracker] trackPageview:trackPageTitle withError:&error]) {
         // エラーハンドリング
     }
+     */
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
@@ -49,24 +53,28 @@
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
     
+    /*
     // Google Analytics
     NSString *trackPageTitle = [NSString stringWithFormat:@"/appDidEnterBackground"];
     NSError *error;
     if (![[GANTracker sharedTracker] trackPageview:trackPageTitle withError:&error]) {
         // エラーハンドリング
     }
+     */
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
     
+    /*
     // Google Analytics
     NSString *trackPageTitle = [NSString stringWithFormat:@"/appWillEnterForeground"];
     NSError *error;
     if (![[GANTracker sharedTracker] trackPageview:trackPageTitle withError:&error]) {
         // エラーハンドリング
     }
+     */
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
@@ -197,24 +205,28 @@
     // 起動回数を1増やす
     [[NSUserDefaults standardUserDefaults]setInteger:numAct + 1 forKey:@"numAct"];
     
+    /*
     // Google Analytics
     NSString *trackPageTitle = [NSString stringWithFormat:@"/appDidBecomeActive"];
     NSError *error;
     if (![[GANTracker sharedTracker] trackPageview:trackPageTitle withError:&error]) {
         // エラーハンドリング
     }
+     */
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     
+    /*
     // Google Analytics
     NSString *trackPageTitle = [NSString stringWithFormat:@"/appWillTerminate"];
     NSError *error;
     if (![[GANTracker sharedTracker] trackPageview:trackPageTitle withError:&error]) {
         // エラーハンドリング
     }
+     */
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex

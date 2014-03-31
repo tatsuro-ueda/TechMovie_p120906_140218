@@ -9,7 +9,7 @@
 #import "RSSParser.h"
 #import "RSSEntry.h"
 #import "NSURL+OgImage.h"
-#import "AFJSONRequestOperation.h"
+#import <AFNetworking/AFNetworking.h>
 #import "NSString+URLEncode.h"
 #import "FeedsTableViewController.h"
 #import "NSString+OgImage.h"

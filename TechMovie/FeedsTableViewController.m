@@ -10,9 +10,6 @@
 #import "RSSParser.h"
 #import "RSSEntry.h"
 #import "WebViewController.h"
-#import "UIImageView+AFNetworking.h"
-#import "AFJSONRequestOperation.h"
-#import "UIImage+GIF.h"
 //#import "GANTracker.h"
 #import "Const.h"
 
@@ -384,6 +381,22 @@ static NSInteger dateDescending(id item1, id item2, void *context)
         NSURL *url = [NSURL URLWithString:urlStringWhole];
         
         // リクエストを送り、返ってきたJSONを解析してはてブ数を見つけ出す
+        
+        NSURLRequest *request = [NSURLRequest requestWithURL:url];
+        AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc]
+                                             initWithRequest:request];
+        operation.responseSerializer = [AFJSONResponseSerializer serializer];
+        [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id JSON)
+        {
+            NSInteger count = [[JSON valueForKeyPath:@"count"] integerValue];
+            
+            // はてブ数を表示させる
+            labelHatebuNumber.text = [NSString stringWithFormat:@"%d users", count];
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            // Handle error
+        }];
+        
+        /*
         NSURLRequest *request = [NSURLRequest requestWithURL:url];
         AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
             NSInteger count = [[JSON valueForKeyPath:@"count"] integerValue];
@@ -391,6 +404,8 @@ static NSInteger dateDescending(id item1, id item2, void *context)
             // はてブ数を表示させる
             labelHatebuNumber.text = [NSString stringWithFormat:@"%d users", count];
         } failure:nil];
+         */
+        
         [operation start];
     }
     return cell;

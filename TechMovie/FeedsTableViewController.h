@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import <iAd/iAd.h>
+#import <AFNetworking/AFNetworking.h>
+#import <LBGIFImage/UIImage+GIF.h>
+#import <AFNetworking/UIImageView+AFNetworking.h>
+
 @class RSSParser;
 
 @interface FeedsTableViewController : UITableViewController<UITableViewDelegate, UITableViewDataSource, ADBannerViewDelegate, UIAlertViewDelegate>
