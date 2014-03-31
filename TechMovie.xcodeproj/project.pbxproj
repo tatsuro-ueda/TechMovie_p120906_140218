@@ -7,13 +7,111 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07091AB81618487F00D4C973 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 07DC33C915F7EF9F00DD97FD /* AppDelegate.m */; };
+		07091ABA1618488000D4C973 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 07DC33C915F7EF9F00DD97FD /* AppDelegate.m */; };
+		070BF5D61674264000BAF473 /* 121209-bannerOff.png in Resources */ = {isa = PBXBuildFile; fileRef = 070BF5D51674264000BAF473 /* 121209-bannerOff.png */; };
+		070BF5D71674264000BAF473 /* 121209-bannerOff.png in Resources */ = {isa = PBXBuildFile; fileRef = 070BF5D51674264000BAF473 /* 121209-bannerOff.png */; };
+		070BF5D81674264000BAF473 /* 121209-bannerOff.png in Resources */ = {isa = PBXBuildFile; fileRef = 070BF5D51674264000BAF473 /* 121209-bannerOff.png */; };
+		070E7ACD1646647400D9D741 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 070E7ACC1646647400D9D741 /* Default-568h@2x.png */; };
+		070E7AD01646659800D9D741 /* banner.png in Resources */ = {isa = PBXBuildFile; fileRef = 070E7ACF1646659800D9D741 /* banner.png */; };
+		070E7AD11646659800D9D741 /* banner.png in Resources */ = {isa = PBXBuildFile; fileRef = 070E7ACF1646659800D9D741 /* banner.png */; };
+		070E7AD21646659800D9D741 /* banner.png in Resources */ = {isa = PBXBuildFile; fileRef = 070E7ACF1646659800D9D741 /* banner.png */; };
+		073621CF1602905100968A88 /* noImage2.png in Resources */ = {isa = PBXBuildFile; fileRef = 073621CD1602905100968A88 /* noImage2.png */; };
+		073621D01602905100968A88 /* noImage2.png in Resources */ = {isa = PBXBuildFile; fileRef = 073621CD1602905100968A88 /* noImage2.png */; };
+		073621D11602905100968A88 /* noImage2.png in Resources */ = {isa = PBXBuildFile; fileRef = 073621CD1602905100968A88 /* noImage2.png */; };
 		073621D21602905100968A88 /* noImage2.png in Resources */ = {isa = PBXBuildFile; fileRef = 073621CD1602905100968A88 /* noImage2.png */; };
+		073621D31602905100968A88 /* noImage2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 073621CE1602905100968A88 /* noImage2@2x.png */; };
+		073621D41602905100968A88 /* noImage2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 073621CE1602905100968A88 /* noImage2@2x.png */; };
+		073621D51602905100968A88 /* noImage2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 073621CE1602905100968A88 /* noImage2@2x.png */; };
 		073621D61602905100968A88 /* noImage2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 073621CE1602905100968A88 /* noImage2@2x.png */; };
+		073DA45816014219003D06C9 /* 120913-CatAppIcon114x114.png in Resources */ = {isa = PBXBuildFile; fileRef = 073DA45716014219003D06C9 /* 120913-CatAppIcon114x114.png */; };
+		073DA45B16014254003D06C9 /* 120913-CatAppIcon72x72.png in Resources */ = {isa = PBXBuildFile; fileRef = 073DA45A16014254003D06C9 /* 120913-CatAppIcon72x72.png */; };
+		073DA45D16014258003D06C9 /* 120913-CatAppIcon144x144.png in Resources */ = {isa = PBXBuildFile; fileRef = 073DA45C16014258003D06C9 /* 120913-CatAppIcon144x144.png */; };
+		073DA45F16014286003D06C9 /* 120913-CatAppIcon57x57.png in Resources */ = {isa = PBXBuildFile; fileRef = 073DA45E16014286003D06C9 /* 120913-CatAppIcon57x57.png */; };
+		076AD79D15F9DEAB00A06E44 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 076AD79C15F9DEAB00A06E44 /* SystemConfiguration.framework */; };
+		076AD79E15F9DEBC00A06E44 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 076AD79C15F9DEAB00A06E44 /* SystemConfiguration.framework */; };
+		076AD79F15F9DEBD00A06E44 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 076AD79C15F9DEAB00A06E44 /* SystemConfiguration.framework */; };
 		076AD7A015F9DEBE00A06E44 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 076AD79C15F9DEAB00A06E44 /* SystemConfiguration.framework */; };
+		076C6522160C449A00014F49 /* NSString+OgImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 076C6521160C449A00014F49 /* NSString+OgImage.m */; };
+		076C6523160C449A00014F49 /* NSString+OgImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 076C6521160C449A00014F49 /* NSString+OgImage.m */; };
+		076C6524160C449A00014F49 /* NSString+OgImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 076C6521160C449A00014F49 /* NSString+OgImage.m */; };
 		076C6525160C449A00014F49 /* NSString+OgImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 076C6521160C449A00014F49 /* NSString+OgImage.m */; };
+		07744A9D16031229009FC1D6 /* search.png in Resources */ = {isa = PBXBuildFile; fileRef = 07744A9B16031229009FC1D6 /* search.png */; };
+		07744A9E16031229009FC1D6 /* search.png in Resources */ = {isa = PBXBuildFile; fileRef = 07744A9B16031229009FC1D6 /* search.png */; };
+		07744A9F16031229009FC1D6 /* search.png in Resources */ = {isa = PBXBuildFile; fileRef = 07744A9B16031229009FC1D6 /* search.png */; };
 		07744AA016031229009FC1D6 /* search.png in Resources */ = {isa = PBXBuildFile; fileRef = 07744A9B16031229009FC1D6 /* search.png */; };
+		07744AA116031229009FC1D6 /* search@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07744A9C16031229009FC1D6 /* search@2x.png */; };
+		07744AA216031229009FC1D6 /* search@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07744A9C16031229009FC1D6 /* search@2x.png */; };
+		07744AA316031229009FC1D6 /* search@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07744A9C16031229009FC1D6 /* search@2x.png */; };
 		07744AA416031229009FC1D6 /* search@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07744A9C16031229009FC1D6 /* search@2x.png */; };
+		079CF008164633FD00C805BF /* 121104-MovieCat57x57.png in Resources */ = {isa = PBXBuildFile; fileRef = 079CF007164633FD00C805BF /* 121104-MovieCat57x57.png */; };
+		079CF00B1646340100C805BF /* 121104-MovieCat114x114.png in Resources */ = {isa = PBXBuildFile; fileRef = 079CF00A1646340100C805BF /* 121104-MovieCat114x114.png */; };
+		079CF00D1646340800C805BF /* 121104-MovieCat72x72.png in Resources */ = {isa = PBXBuildFile; fileRef = 079CF00C1646340800C805BF /* 121104-MovieCat72x72.png */; };
+		079CF00F1646340C00C805BF /* 121104-MovieCat144x144.png in Resources */ = {isa = PBXBuildFile; fileRef = 079CF00E1646340C00C805BF /* 121104-MovieCat144x144.png */; };
 		07D9416118E512E10084D702 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 07D9416018E512E10084D702 /* libPods.a */; };
+		07DC337E15F7EEC500DD97FD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07DC337D15F7EEC500DD97FD /* UIKit.framework */; };
+		07DC338015F7EEC500DD97FD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07DC337F15F7EEC500DD97FD /* Foundation.framework */; };
+		07DC338215F7EEC500DD97FD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07DC338115F7EEC500DD97FD /* CoreGraphics.framework */; };
+		07DC338815F7EEC500DD97FD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 07DC338615F7EEC500DD97FD /* InfoPlist.strings */; };
+		07DC338A15F7EEC500DD97FD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 07DC338915F7EEC500DD97FD /* main.m */; };
+		07DC33C715F7EF6500DD97FD /* Const.m in Sources */ = {isa = PBXBuildFile; fileRef = 07DC33C615F7EF6500DD97FD /* Const.m */; };
+		07DC33CA15F7EF9F00DD97FD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 07DC33C915F7EF9F00DD97FD /* AppDelegate.m */; };
+		07DC33CC15F7EFC000DD97FD /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07DC33CB15F7EFC000DD97FD /* MainStoryboard.storyboard */; };
+		07DC33D915F7EFFB00DD97FD /* FeedsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07DC33CE15F7EFFB00DD97FD /* FeedsTableViewController.m */; };
+		07DC33DA15F7EFFB00DD97FD /* RSSEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 07DC33D015F7EFFB00DD97FD /* RSSEntry.m */; };
+		07DC33DB15F7EFFB00DD97FD /* RSSParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 07DC33D215F7EFFB00DD97FD /* RSSParser.m */; };
+		07DC33DD15F7EFFB00DD97FD /* UIImage+OgImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 07DC33D615F7EFFB00DD97FD /* UIImage+OgImage.m */; };
+		07DC33DE15F7EFFB00DD97FD /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07DC33D815F7EFFB00DD97FD /* WebViewController.m */; };
+		07DC33EC15F7F16200DD97FD /* NSURL+OgImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 07DC33EB15F7F16200DD97FD /* NSURL+OgImage.m */; };
+		07DC33EF15F7F19200DD97FD /* NSString+URLEncode.m in Sources */ = {isa = PBXBuildFile; fileRef = 07DC33EE15F7F19200DD97FD /* NSString+URLEncode.m */; };
+		07DC33F215F7F1C600DD97FD /* NSString+Encode.m in Sources */ = {isa = PBXBuildFile; fileRef = 07DC33F115F7F1C600DD97FD /* NSString+Encode.m */; };
+		07DC33FB15F7F28000DD97FD /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07DC33FA15F7F28000DD97FD /* CFNetwork.framework */; };
+		07DC33FD15F7F28500DD97FD /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07DC33FC15F7F28500DD97FD /* CoreFoundation.framework */; };
+		07DC33FF15F7F29900DD97FD /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07DC33FE15F7F29900DD97FD /* iAd.framework */; };
+		07DC340115F7F2A000DD97FD /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07DC340015F7F2A000DD97FD /* ImageIO.framework */; };
+		07DC340315F7F2B500DD97FD /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 07DC340215F7F2B500DD97FD /* libsqlite3.0.dylib */; };
+		07DC340A15F7F48900DD97FD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07DC337D15F7EEC500DD97FD /* UIKit.framework */; };
+		07DC340B15F7F48900DD97FD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07DC337F15F7EEC500DD97FD /* Foundation.framework */; };
+		07DC340C15F7F48900DD97FD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07DC338115F7EEC500DD97FD /* CoreGraphics.framework */; };
+		07DC341215F7F48900DD97FD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 07DC341015F7F48900DD97FD /* InfoPlist.strings */; };
+		07DC341415F7F48900DD97FD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 07DC341315F7F48900DD97FD /* main.m */; };
+		07DC343015F7F58000DD97FD /* NSString+Encode.m in Sources */ = {isa = PBXBuildFile; fileRef = 07DC33F115F7F1C600DD97FD /* NSString+Encode.m */; };
+		07DC343115F7F58000DD97FD /* NSString+URLEncode.m in Sources */ = {isa = PBXBuildFile; fileRef = 07DC33EE15F7F19200DD97FD /* NSString+URLEncode.m */; };
+		07DC343215F7F58000DD97FD /* NSURL+OgImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 07DC33EB15F7F16200DD97FD /* NSURL+OgImage.m */; };
+		07DC343315F7F58000DD97FD /* FeedsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07DC33CE15F7EFFB00DD97FD /* FeedsTableViewController.m */; };
+		07DC343415F7F58000DD97FD /* RSSEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 07DC33D015F7EFFB00DD97FD /* RSSEntry.m */; };
+		07DC343515F7F58000DD97FD /* RSSParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 07DC33D215F7EFFB00DD97FD /* RSSParser.m */; };
+		07DC343715F7F58000DD97FD /* UIImage+OgImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 07DC33D615F7EFFB00DD97FD /* UIImage+OgImage.m */; };
+		07DC343815F7F58000DD97FD /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07DC33D815F7EFFB00DD97FD /* WebViewController.m */; };
+		07DC343B15F7F58000DD97FD /* Const.m in Sources */ = {isa = PBXBuildFile; fileRef = 07DC33C615F7EF6500DD97FD /* Const.m */; };
+		07DC343C15F7F60E00DD97FD /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07DC340015F7F2A000DD97FD /* ImageIO.framework */; };
+		07DC343D15F7F60E00DD97FD /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07DC33FE15F7F29900DD97FD /* iAd.framework */; };
+		07DC343E15F7F60E00DD97FD /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07DC33FC15F7F28500DD97FD /* CoreFoundation.framework */; };
+		07DC343F15F7F60E00DD97FD /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07DC33FA15F7F28000DD97FD /* CFNetwork.framework */; };
+		07DC344015F7F61300DD97FD /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 07DC340215F7F2B500DD97FD /* libsqlite3.0.dylib */; };
+		07DC344B15F7FE5100DD97FD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 07DC344A15F7FE5100DD97FD /* AppDelegate.m */; };
+		07DC345015F8006400DD97FD /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07DC33CB15F7EFC000DD97FD /* MainStoryboard.storyboard */; };
+		07DC345715F8008500DD97FD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07DC337D15F7EEC500DD97FD /* UIKit.framework */; };
+		07DC345815F8008500DD97FD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07DC337F15F7EEC500DD97FD /* Foundation.framework */; };
+		07DC345915F8008500DD97FD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07DC338115F7EEC500DD97FD /* CoreGraphics.framework */; };
+		07DC345F15F8008500DD97FD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 07DC345D15F8008500DD97FD /* InfoPlist.strings */; };
+		07DC346115F8008500DD97FD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 07DC346015F8008500DD97FD /* main.m */; };
+		07DC347215F800B400DD97FD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 07DC347015F800B400DD97FD /* AppDelegate.m */; };
+		07DC348115F8012400DD97FD /* NSString+Encode.m in Sources */ = {isa = PBXBuildFile; fileRef = 07DC33F115F7F1C600DD97FD /* NSString+Encode.m */; };
+		07DC348215F8012400DD97FD /* NSString+URLEncode.m in Sources */ = {isa = PBXBuildFile; fileRef = 07DC33EE15F7F19200DD97FD /* NSString+URLEncode.m */; };
+		07DC348315F8012400DD97FD /* NSURL+OgImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 07DC33EB15F7F16200DD97FD /* NSURL+OgImage.m */; };
+		07DC348415F8012400DD97FD /* FeedsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07DC33CE15F7EFFB00DD97FD /* FeedsTableViewController.m */; };
+		07DC348515F8012400DD97FD /* RSSEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 07DC33D015F7EFFB00DD97FD /* RSSEntry.m */; };
+		07DC348615F8012400DD97FD /* RSSParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 07DC33D215F7EFFB00DD97FD /* RSSParser.m */; };
+		07DC348815F8012400DD97FD /* UIImage+OgImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 07DC33D615F7EFFB00DD97FD /* UIImage+OgImage.m */; };
+		07DC348915F8012400DD97FD /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07DC33D815F7EFFB00DD97FD /* WebViewController.m */; };
+		07DC348A15F8012400DD97FD /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07DC33CB15F7EFC000DD97FD /* MainStoryboard.storyboard */; };
+		07DC348C15F8012400DD97FD /* Const.m in Sources */ = {isa = PBXBuildFile; fileRef = 07DC33C615F7EF6500DD97FD /* Const.m */; };
+		07DC348D15F8017300DD97FD /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07DC340015F7F2A000DD97FD /* ImageIO.framework */; };
+		07DC348E15F8017300DD97FD /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07DC33FE15F7F29900DD97FD /* iAd.framework */; };
+		07DC348F15F8017300DD97FD /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07DC33FC15F7F28500DD97FD /* CoreFoundation.framework */; };
+		07DC349015F8017300DD97FD /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07DC33FA15F7F28000DD97FD /* CFNetwork.framework */; };
+		07DC349115F8017800DD97FD /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 07DC340215F7F2B500DD97FD /* libsqlite3.0.dylib */; };
 		07DC349815F8025F00DD97FD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07DC337D15F7EEC500DD97FD /* UIKit.framework */; };
 		07DC349915F8025F00DD97FD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07DC337F15F7EEC500DD97FD /* Foundation.framework */; };
 		07DC349A15F8025F00DD97FD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07DC338115F7EEC500DD97FD /* CoreGraphics.framework */; };
@@ -36,18 +134,46 @@
 		07DC34D015F8034800DD97FD /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07DC33FA15F7F28000DD97FD /* CFNetwork.framework */; };
 		07DC34D115F8034C00DD97FD /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 07DC340215F7F2B500DD97FD /* libsqlite3.0.dylib */; };
 		07DC34D415F803EA00DD97FD /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07DC34D315F803EA00DD97FD /* SettingViewController.m */; };
+		07DC34D615F8046D00DD97FD /* loading3.gif in Resources */ = {isa = PBXBuildFile; fileRef = 07DC34D515F8046D00DD97FD /* loading3.gif */; };
+		07DC34D715F8046D00DD97FD /* loading3.gif in Resources */ = {isa = PBXBuildFile; fileRef = 07DC34D515F8046D00DD97FD /* loading3.gif */; };
+		07DC34D815F8046D00DD97FD /* loading3.gif in Resources */ = {isa = PBXBuildFile; fileRef = 07DC34D515F8046D00DD97FD /* loading3.gif */; };
 		07DC34D915F8046D00DD97FD /* loading3.gif in Resources */ = {isa = PBXBuildFile; fileRef = 07DC34D515F8046D00DD97FD /* loading3.gif */; };
+		07DC34E515F804F200DD97FD /* Default-Landscape@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 07DC34DE15F804F200DD97FD /* Default-Landscape@2x~ipad.png */; };
+		07DC34E615F804F200DD97FD /* Default-Landscape@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 07DC34DE15F804F200DD97FD /* Default-Landscape@2x~ipad.png */; };
 		07DC34E715F804F200DD97FD /* Default-Landscape@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 07DC34DE15F804F200DD97FD /* Default-Landscape@2x~ipad.png */; };
+		07DC34E915F804F200DD97FD /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 07DC34DF15F804F200DD97FD /* Default-Landscape~ipad.png */; };
+		07DC34EA15F804F200DD97FD /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 07DC34DF15F804F200DD97FD /* Default-Landscape~ipad.png */; };
 		07DC34EB15F804F200DD97FD /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 07DC34DF15F804F200DD97FD /* Default-Landscape~ipad.png */; };
+		07DC34ED15F804F200DD97FD /* Default-Portrait@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 07DC34E015F804F200DD97FD /* Default-Portrait@2x~ipad.png */; };
+		07DC34EE15F804F200DD97FD /* Default-Portrait@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 07DC34E015F804F200DD97FD /* Default-Portrait@2x~ipad.png */; };
 		07DC34EF15F804F200DD97FD /* Default-Portrait@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 07DC34E015F804F200DD97FD /* Default-Portrait@2x~ipad.png */; };
+		07DC34F115F804F200DD97FD /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 07DC34E115F804F200DD97FD /* Default-Portrait~ipad.png */; };
+		07DC34F215F804F200DD97FD /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 07DC34E115F804F200DD97FD /* Default-Portrait~ipad.png */; };
 		07DC34F315F804F200DD97FD /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 07DC34E115F804F200DD97FD /* Default-Portrait~ipad.png */; };
+		07DC34F515F804F200DD97FD /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 07DC34E215F804F200DD97FD /* Default.png */; };
+		07DC34F615F804F200DD97FD /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 07DC34E215F804F200DD97FD /* Default.png */; };
 		07DC34F715F804F200DD97FD /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 07DC34E215F804F200DD97FD /* Default.png */; };
+		07DC34F915F804F200DD97FD /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07DC34E315F804F200DD97FD /* Default@2x.png */; };
+		07DC34FA15F804F200DD97FD /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07DC34E315F804F200DD97FD /* Default@2x.png */; };
 		07DC34FB15F804F200DD97FD /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07DC34E315F804F200DD97FD /* Default@2x.png */; };
 		07DC34FD15F8051700DD97FD /* 120717-AppIcon57x57.png in Resources */ = {isa = PBXBuildFile; fileRef = 07DC34FC15F8051700DD97FD /* 120717-AppIcon57x57.png */; };
 		07DC34FF15F8051A00DD97FD /* 120717-AppIcon114x114.png in Resources */ = {isa = PBXBuildFile; fileRef = 07DC34FE15F8051A00DD97FD /* 120717-AppIcon114x114.png */; };
 		07DC350115F8052800DD97FD /* 120717-AppIcon72x72.png in Resources */ = {isa = PBXBuildFile; fileRef = 07DC350015F8052800DD97FD /* 120717-AppIcon72x72.png */; };
 		07DC350315F8052C00DD97FD /* 120717-AppIcon144x144.png in Resources */ = {isa = PBXBuildFile; fileRef = 07DC350215F8052C00DD97FD /* 120717-AppIcon144x144.png */; };
+		07EA5A36164A113D00FF6C59 /* banner~iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 07EA5A35164A113D00FF6C59 /* banner~iPad.png */; };
+		07EA5A37164A113D00FF6C59 /* banner~iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 07EA5A35164A113D00FF6C59 /* banner~iPad.png */; };
+		07EA5A38164A113D00FF6C59 /* banner~iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 07EA5A35164A113D00FF6C59 /* banner~iPad.png */; };
+		07EB1B2A160704D000E8F98D /* iPadMainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07EB1B29160704D000E8F98D /* iPadMainStoryboard.storyboard */; };
+		07EB1B2B160704D000E8F98D /* iPadMainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07EB1B29160704D000E8F98D /* iPadMainStoryboard.storyboard */; };
+		07EB1B2C160704D000E8F98D /* iPadMainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07EB1B29160704D000E8F98D /* iPadMainStoryboard.storyboard */; };
 		07EB1B2E1607094B00E8F98D /* iPadMainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07EB1B2D1607094B00E8F98D /* iPadMainStoryboard.storyboard */; };
+		07EB1B3016070DAA00E8F98D /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 07EB1B2F16070DAA00E8F98D /* Default.png */; };
+		07EB1B3216070DAD00E8F98D /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07EB1B3116070DAD00E8F98D /* Default@2x.png */; };
+		07EB1B3416070DB300E8F98D /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 07EB1B3316070DB300E8F98D /* Default-Portrait~ipad.png */; };
+		07EB1B3616070DB700E8F98D /* Default-Portrait@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 07EB1B3516070DB700E8F98D /* Default-Portrait@2x~ipad.png */; };
+		07EB1B3816070DBD00E8F98D /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 07EB1B3716070DBD00E8F98D /* Default-Landscape~ipad.png */; };
+		07EB1B3A16070DC100E8F98D /* Default-Landscape@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 07EB1B3916070DC100E8F98D /* Default-Landscape@2x~ipad.png */; };
+		0F818626B9C84716BED1DEC1 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A3E39634BC142B886C2C9E5 /* libPods.a */; };
 		685A0BDBC2C144B68332600C /* libPods-TechMoviePlus.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FD3DFA7A012E4A158EF1C6E6 /* libPods-TechMoviePlus.a */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +197,7 @@
 		079CF00C1646340800C805BF /* 121104-MovieCat72x72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "121104-MovieCat72x72.png"; sourceTree = "<group>"; };
 		079CF00E1646340C00C805BF /* 121104-MovieCat144x144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "121104-MovieCat144x144.png"; sourceTree = "<group>"; };
 		07D9416018E512E10084D702 /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPods.a; path = "Pods/build/Debug-iphoneos/libPods.a"; sourceTree = "<group>"; };
+		07DC337915F7EEC500DD97FD /* TechMovie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TechMovie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07DC337D15F7EEC500DD97FD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		07DC337F15F7EEC500DD97FD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		07DC338115F7EEC500DD97FD /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -104,12 +231,14 @@
 		07DC33FE15F7F29900DD97FD /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		07DC340015F7F2A000DD97FD /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		07DC340215F7F2B500DD97FD /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		07DC340815F7F48900DD97FD /* MovieMilitary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieMilitary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07DC340F15F7F48900DD97FD /* MovieMilitary-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MovieMilitary-Info.plist"; sourceTree = "<group>"; };
 		07DC341115F7F48900DD97FD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		07DC341315F7F48900DD97FD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		07DC341515F7F48900DD97FD /* MovieMilitary-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MovieMilitary-Prefix.pch"; sourceTree = "<group>"; };
 		07DC344915F7FE5100DD97FD /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		07DC344A15F7FE5100DD97FD /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		07DC345515F8008500DD97FD /* NewMovieRailway.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewMovieRailway.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07DC345C15F8008500DD97FD /* NewMovieRailway-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NewMovieRailway-Info.plist"; sourceTree = "<group>"; };
 		07DC345E15F8008500DD97FD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		07DC346015F8008500DD97FD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -153,6 +282,55 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		07DC337615F7EEC500DD97FD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				076AD79D15F9DEAB00A06E44 /* SystemConfiguration.framework in Frameworks */,
+				07DC340315F7F2B500DD97FD /* libsqlite3.0.dylib in Frameworks */,
+				07DC340115F7F2A000DD97FD /* ImageIO.framework in Frameworks */,
+				07DC33FF15F7F29900DD97FD /* iAd.framework in Frameworks */,
+				07DC33FD15F7F28500DD97FD /* CoreFoundation.framework in Frameworks */,
+				07DC33FB15F7F28000DD97FD /* CFNetwork.framework in Frameworks */,
+				07DC337E15F7EEC500DD97FD /* UIKit.framework in Frameworks */,
+				07DC338015F7EEC500DD97FD /* Foundation.framework in Frameworks */,
+				07DC338215F7EEC500DD97FD /* CoreGraphics.framework in Frameworks */,
+				0F818626B9C84716BED1DEC1 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		07DC340515F7F48900DD97FD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07DC340A15F7F48900DD97FD /* UIKit.framework in Frameworks */,
+				07DC340B15F7F48900DD97FD /* Foundation.framework in Frameworks */,
+				07DC340C15F7F48900DD97FD /* CoreGraphics.framework in Frameworks */,
+				07DC343C15F7F60E00DD97FD /* ImageIO.framework in Frameworks */,
+				07DC343D15F7F60E00DD97FD /* iAd.framework in Frameworks */,
+				07DC343E15F7F60E00DD97FD /* CoreFoundation.framework in Frameworks */,
+				07DC343F15F7F60E00DD97FD /* CFNetwork.framework in Frameworks */,
+				07DC344015F7F61300DD97FD /* libsqlite3.0.dylib in Frameworks */,
+				076AD79E15F9DEBC00A06E44 /* SystemConfiguration.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		07DC345215F8008500DD97FD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07DC345715F8008500DD97FD /* UIKit.framework in Frameworks */,
+				07DC345815F8008500DD97FD /* Foundation.framework in Frameworks */,
+				07DC345915F8008500DD97FD /* CoreGraphics.framework in Frameworks */,
+				07DC348D15F8017300DD97FD /* ImageIO.framework in Frameworks */,
+				07DC348E15F8017300DD97FD /* iAd.framework in Frameworks */,
+				07DC348F15F8017300DD97FD /* CoreFoundation.framework in Frameworks */,
+				07DC349015F8017300DD97FD /* CFNetwork.framework in Frameworks */,
+				07DC349115F8017800DD97FD /* libsqlite3.0.dylib in Frameworks */,
+				076AD79F15F9DEBD00A06E44 /* SystemConfiguration.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		07DC349315F8025F00DD97FD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -218,6 +396,9 @@
 		07DC337A15F7EEC500DD97FD /* Products */ = {
 			isa = PBXGroup;
 			children = (
+				07DC337915F7EEC500DD97FD /* TechMovie.app */,
+				07DC340815F7F48900DD97FD /* MovieMilitary.app */,
+				07DC345515F8008500DD97FD /* NewMovieRailway.app */,
 				07DC349615F8025F00DD97FD /* TechMoviePlus.app */,
 			);
 			name = Products;
@@ -369,6 +550,59 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		07DC337815F7EEC500DD97FD /* TechMovie */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 07DC339715F7EEC500DD97FD /* Build configuration list for PBXNativeTarget "TechMovie" */;
+			buildPhases = (
+				89D764F4C8704EC0BF8F799F /* Check Pods Manifest.lock */,
+				07DC337515F7EEC500DD97FD /* Sources */,
+				07DC337615F7EEC500DD97FD /* Frameworks */,
+				07DC337715F7EEC500DD97FD /* Resources */,
+				CBD58D02969047EF8E9B9D6D /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TechMovie;
+			productName = TechMovie;
+			productReference = 07DC337915F7EEC500DD97FD /* TechMovie.app */;
+			productType = "com.apple.product-type.application";
+		};
+		07DC340715F7F48900DD97FD /* MovieMilitary */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 07DC341F15F7F48900DD97FD /* Build configuration list for PBXNativeTarget "MovieMilitary" */;
+			buildPhases = (
+				07DC340415F7F48900DD97FD /* Sources */,
+				07DC340515F7F48900DD97FD /* Frameworks */,
+				07DC340615F7F48900DD97FD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MovieMilitary;
+			productName = MovieMilitary;
+			productReference = 07DC340815F7F48900DD97FD /* MovieMilitary.app */;
+			productType = "com.apple.product-type.application";
+		};
+		07DC345415F8008500DD97FD /* NewMovieRailway */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 07DC346C15F8008500DD97FD /* Build configuration list for PBXNativeTarget "NewMovieRailway" */;
+			buildPhases = (
+				07DC345115F8008500DD97FD /* Sources */,
+				07DC345215F8008500DD97FD /* Frameworks */,
+				07DC345315F8008500DD97FD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NewMovieRailway;
+			productName = NewMovieRailway;
+			productReference = 07DC345515F8008500DD97FD /* NewMovieRailway.app */;
+			productType = "com.apple.product-type.application";
+		};
 		07DC349515F8025F00DD97FD /* TechMoviePlus */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 07DC34AD15F8025F00DD97FD /* Build configuration list for PBXNativeTarget "TechMoviePlus" */;
@@ -396,6 +630,11 @@
 			attributes = {
 				LastUpgradeCheck = 0440;
 				ORGANIZATIONNAME = "Tatsuro Ueda";
+				TargetAttributes = {
+					07DC337815F7EEC500DD97FD = {
+						DevelopmentTeam = 8296H9WY92;
+					};
+				};
 			};
 			buildConfigurationList = 07DC337315F7EEC500DD97FD /* Build configuration list for PBXProject "TechMovie" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -409,12 +648,96 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				07DC337815F7EEC500DD97FD /* TechMovie */,
+				07DC340715F7F48900DD97FD /* MovieMilitary */,
+				07DC345415F8008500DD97FD /* NewMovieRailway */,
 				07DC349515F8025F00DD97FD /* TechMoviePlus */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		07DC337715F7EEC500DD97FD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07DC338815F7EEC500DD97FD /* InfoPlist.strings in Resources */,
+				07DC33CC15F7EFC000DD97FD /* MainStoryboard.storyboard in Resources */,
+				07DC34D615F8046D00DD97FD /* loading3.gif in Resources */,
+				073DA45816014219003D06C9 /* 120913-CatAppIcon114x114.png in Resources */,
+				073DA45B16014254003D06C9 /* 120913-CatAppIcon72x72.png in Resources */,
+				073DA45D16014258003D06C9 /* 120913-CatAppIcon144x144.png in Resources */,
+				073DA45F16014286003D06C9 /* 120913-CatAppIcon57x57.png in Resources */,
+				073621CF1602905100968A88 /* noImage2.png in Resources */,
+				073621D31602905100968A88 /* noImage2@2x.png in Resources */,
+				07744A9D16031229009FC1D6 /* search.png in Resources */,
+				07744AA116031229009FC1D6 /* search@2x.png in Resources */,
+				07EB1B2A160704D000E8F98D /* iPadMainStoryboard.storyboard in Resources */,
+				07EB1B3016070DAA00E8F98D /* Default.png in Resources */,
+				07EB1B3216070DAD00E8F98D /* Default@2x.png in Resources */,
+				07EB1B3416070DB300E8F98D /* Default-Portrait~ipad.png in Resources */,
+				07EB1B3616070DB700E8F98D /* Default-Portrait@2x~ipad.png in Resources */,
+				07EB1B3816070DBD00E8F98D /* Default-Landscape~ipad.png in Resources */,
+				07EB1B3A16070DC100E8F98D /* Default-Landscape@2x~ipad.png in Resources */,
+				079CF008164633FD00C805BF /* 121104-MovieCat57x57.png in Resources */,
+				079CF00B1646340100C805BF /* 121104-MovieCat114x114.png in Resources */,
+				079CF00D1646340800C805BF /* 121104-MovieCat72x72.png in Resources */,
+				079CF00F1646340C00C805BF /* 121104-MovieCat144x144.png in Resources */,
+				070E7ACD1646647400D9D741 /* Default-568h@2x.png in Resources */,
+				070E7AD01646659800D9D741 /* banner.png in Resources */,
+				07EA5A36164A113D00FF6C59 /* banner~iPad.png in Resources */,
+				070BF5D61674264000BAF473 /* 121209-bannerOff.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		07DC340615F7F48900DD97FD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07DC341215F7F48900DD97FD /* InfoPlist.strings in Resources */,
+				07DC345015F8006400DD97FD /* MainStoryboard.storyboard in Resources */,
+				07DC34D715F8046D00DD97FD /* loading3.gif in Resources */,
+				07DC34E515F804F200DD97FD /* Default-Landscape@2x~ipad.png in Resources */,
+				07DC34E915F804F200DD97FD /* Default-Landscape~ipad.png in Resources */,
+				07DC34ED15F804F200DD97FD /* Default-Portrait@2x~ipad.png in Resources */,
+				07DC34F115F804F200DD97FD /* Default-Portrait~ipad.png in Resources */,
+				07DC34F515F804F200DD97FD /* Default.png in Resources */,
+				07DC34F915F804F200DD97FD /* Default@2x.png in Resources */,
+				073621D01602905100968A88 /* noImage2.png in Resources */,
+				073621D41602905100968A88 /* noImage2@2x.png in Resources */,
+				07744A9E16031229009FC1D6 /* search.png in Resources */,
+				07744AA216031229009FC1D6 /* search@2x.png in Resources */,
+				07EB1B2B160704D000E8F98D /* iPadMainStoryboard.storyboard in Resources */,
+				070E7AD11646659800D9D741 /* banner.png in Resources */,
+				07EA5A37164A113D00FF6C59 /* banner~iPad.png in Resources */,
+				070BF5D71674264000BAF473 /* 121209-bannerOff.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		07DC345315F8008500DD97FD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07DC345F15F8008500DD97FD /* InfoPlist.strings in Resources */,
+				07DC348A15F8012400DD97FD /* MainStoryboard.storyboard in Resources */,
+				07DC34D815F8046D00DD97FD /* loading3.gif in Resources */,
+				07DC34E615F804F200DD97FD /* Default-Landscape@2x~ipad.png in Resources */,
+				07DC34EA15F804F200DD97FD /* Default-Landscape~ipad.png in Resources */,
+				07DC34EE15F804F200DD97FD /* Default-Portrait@2x~ipad.png in Resources */,
+				07DC34F215F804F200DD97FD /* Default-Portrait~ipad.png in Resources */,
+				07DC34F615F804F200DD97FD /* Default.png in Resources */,
+				07DC34FA15F804F200DD97FD /* Default@2x.png in Resources */,
+				073621D11602905100968A88 /* noImage2.png in Resources */,
+				073621D51602905100968A88 /* noImage2@2x.png in Resources */,
+				07744A9F16031229009FC1D6 /* search.png in Resources */,
+				07744AA316031229009FC1D6 /* search@2x.png in Resources */,
+				07EB1B2C160704D000E8F98D /* iPadMainStoryboard.storyboard in Resources */,
+				070E7AD21646659800D9D741 /* banner.png in Resources */,
+				07EA5A38164A113D00FF6C59 /* banner~iPad.png in Resources */,
+				070BF5D81674264000BAF473 /* 121209-bannerOff.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		07DC349415F8025F00DD97FD /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -458,6 +781,36 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		89D764F4C8704EC0BF8F799F /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		CBD58D02969047EF8E9B9D6D /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		F40C1FFC6B0D4D72AC8C3EF5 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -476,6 +829,65 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		07DC337515F7EEC500DD97FD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07DC338A15F7EEC500DD97FD /* main.m in Sources */,
+				07DC33C715F7EF6500DD97FD /* Const.m in Sources */,
+				07DC33CA15F7EF9F00DD97FD /* AppDelegate.m in Sources */,
+				07DC33D915F7EFFB00DD97FD /* FeedsTableViewController.m in Sources */,
+				07DC33DA15F7EFFB00DD97FD /* RSSEntry.m in Sources */,
+				07DC33DB15F7EFFB00DD97FD /* RSSParser.m in Sources */,
+				07DC33DD15F7EFFB00DD97FD /* UIImage+OgImage.m in Sources */,
+				07DC33DE15F7EFFB00DD97FD /* WebViewController.m in Sources */,
+				07DC33EC15F7F16200DD97FD /* NSURL+OgImage.m in Sources */,
+				07DC33EF15F7F19200DD97FD /* NSString+URLEncode.m in Sources */,
+				07DC33F215F7F1C600DD97FD /* NSString+Encode.m in Sources */,
+				076C6522160C449A00014F49 /* NSString+OgImage.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		07DC340415F7F48900DD97FD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07DC341415F7F48900DD97FD /* main.m in Sources */,
+				07DC343015F7F58000DD97FD /* NSString+Encode.m in Sources */,
+				07DC343115F7F58000DD97FD /* NSString+URLEncode.m in Sources */,
+				07DC343215F7F58000DD97FD /* NSURL+OgImage.m in Sources */,
+				07DC343315F7F58000DD97FD /* FeedsTableViewController.m in Sources */,
+				07DC343415F7F58000DD97FD /* RSSEntry.m in Sources */,
+				07DC343515F7F58000DD97FD /* RSSParser.m in Sources */,
+				07DC343715F7F58000DD97FD /* UIImage+OgImage.m in Sources */,
+				07DC343815F7F58000DD97FD /* WebViewController.m in Sources */,
+				07DC343B15F7F58000DD97FD /* Const.m in Sources */,
+				07DC344B15F7FE5100DD97FD /* AppDelegate.m in Sources */,
+				076C6523160C449A00014F49 /* NSString+OgImage.m in Sources */,
+				07091AB81618487F00D4C973 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		07DC345115F8008500DD97FD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07DC346115F8008500DD97FD /* main.m in Sources */,
+				07DC347215F800B400DD97FD /* AppDelegate.m in Sources */,
+				07DC348115F8012400DD97FD /* NSString+Encode.m in Sources */,
+				07DC348215F8012400DD97FD /* NSString+URLEncode.m in Sources */,
+				07DC348315F8012400DD97FD /* NSURL+OgImage.m in Sources */,
+				07DC348415F8012400DD97FD /* FeedsTableViewController.m in Sources */,
+				07DC348515F8012400DD97FD /* RSSEntry.m in Sources */,
+				07DC348615F8012400DD97FD /* RSSParser.m in Sources */,
+				07DC348815F8012400DD97FD /* UIImage+OgImage.m in Sources */,
+				07DC348915F8012400DD97FD /* WebViewController.m in Sources */,
+				07DC348C15F8012400DD97FD /* Const.m in Sources */,
+				076C6524160C449A00014F49 /* NSString+OgImage.m in Sources */,
+				07091ABA1618488000D4C973 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		07DC349215F8025F00DD97FD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -583,6 +995,120 @@
 			};
 			name = Release;
 		};
+		07DC339815F7EEC500DD97FD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5FCD61F0AD1B42DBA15DD0A6 /* Pods.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TechMovie/TechMovie-Prefix.pch";
+				INFOPLIST_FILE = "TechMovie/TechMovie-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Library\"",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		07DC339915F7EEC500DD97FD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5FCD61F0AD1B42DBA15DD0A6 /* Pods.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TechMovie/TechMovie-Prefix.pch";
+				INFOPLIST_FILE = "TechMovie/TechMovie-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Library\"",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		07DC342015F7F48900DD97FD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MovieMilitary/MovieMilitary-Prefix.pch";
+				INFOPLIST_FILE = "MovieMilitary/MovieMilitary-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Library\"",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		07DC342115F7F48900DD97FD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MovieMilitary/MovieMilitary-Prefix.pch";
+				INFOPLIST_FILE = "MovieMilitary/MovieMilitary-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Library\"",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		07DC346D15F8008500DD97FD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NewMovieRailway/NewMovieRailway-Prefix.pch";
+				INFOPLIST_FILE = "NewMovieRailway/NewMovieRailway-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Library\"",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		07DC346E15F8008500DD97FD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NewMovieRailway/NewMovieRailway-Prefix.pch";
+				INFOPLIST_FILE = "NewMovieRailway/NewMovieRailway-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Library\"",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
 		07DC34AE15F8025F00DD97FD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = ADF13B02CDF9404AACFC6F1B /* Pods-TechMoviePlus.xcconfig */;
@@ -631,6 +1157,33 @@
 			buildConfigurations = (
 				07DC339515F7EEC500DD97FD /* Debug */,
 				07DC339615F7EEC500DD97FD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		07DC339715F7EEC500DD97FD /* Build configuration list for PBXNativeTarget "TechMovie" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				07DC339815F7EEC500DD97FD /* Debug */,
+				07DC339915F7EEC500DD97FD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		07DC341F15F7F48900DD97FD /* Build configuration list for PBXNativeTarget "MovieMilitary" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				07DC342015F7F48900DD97FD /* Debug */,
+				07DC342115F7F48900DD97FD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		07DC346C15F8008500DD97FD /* Build configuration list for PBXNativeTarget "NewMovieRailway" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				07DC346D15F8008500DD97FD /* Debug */,
+				07DC346E15F8008500DD97FD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
