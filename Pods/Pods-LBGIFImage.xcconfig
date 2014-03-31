@@ -1,0 +1,1 @@
+PODS_LBGIFIMAGE_OTHER_LDFLAGS = -framework ImageIO
