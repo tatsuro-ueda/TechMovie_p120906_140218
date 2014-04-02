@@ -7,34 +7,31 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <iAd/iAd.h>
 #import <AFNetworking/AFNetworking.h>
 #import <LBGIFImage/UIImage+GIF.h>
 #import <AFNetworking/UIImageView+AFNetworking.h>
+#import "MyUtility.h"
 
 @class RSSParser;
 
-@interface FeedsTableViewController : UITableViewController<UITableViewDelegate, UITableViewDataSource, ADBannerViewDelegate, UIAlertViewDelegate>
+@interface FeedsTableViewController : UITableViewController<UITableViewDelegate, UITableViewDataSource, UIAlertViewDelegate>
 {
-    NSArray         *_itemsArray;
-    NSMutableArray  *_ogImages;
-    NSMutableArray  *_bkmImages;
-    UIProgressView  *_progressView;
-    UIAlertView     *_progressAlertView;
-    NSOperationQueue *_queue;
-    UIAlertView     *_alertViewInvitation;
-    NSTimer         *_timerIncrease;
-    NSTimer         *_timerDecrease;
-//    RSSParser       *_parser;
-    UIAlertView     *_infoAlertView;
+    NSMutableArray  *ogImages;
+    NSMutableArray  *bkmImages;
+    UIProgressView  *progressView;
+    UIAlertView     *progressAlertView;
+    NSOperationQueue *queue;
+    UIAlertView     *alertViewInvitation;
+    NSTimer         *timerIncrease;
+    NSTimer         *timerDecrease;
+    UIAlertView     *infoAlertView;
 }
 // リストに表示するアイテムを格納する配列
 // 各要素は「RSSEntry」クラスのインスタンスとする
 
-@property (strong) RSSParser *parser;
-@property (strong) NSArray *itemsArray;
+@property RSSParser *parser;
+@property NSArray *itemsArray;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
-@property (strong, nonatomic) IBOutlet ADBannerView *adView;
 @property __weak NSBlockOperation *weakOperation;
 @property (strong, nonatomic) IBOutlet UITableView *banner;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *refreshButton;

@@ -21,6 +21,15 @@ const NSString *kStrURLPipesWith2Keywords =
 @"http://pipes.yahoo.com/pipes/pipe.run?_id=d6736f52235d6c16befbf95d7320fd1e&_render=rss&";
 const NSString *kStrURLPipesWith1Keyword = @"http://p120908-new-movies-server.herokuapp.com/new_movie?";
 
+@interface FeedsTableViewController ()
+
+@end
+
+@implementation FeedsTableViewController
+@synthesize itemsArray = _itemsArray;
+@synthesize tableView = _tableView;
+@synthesize weakOperation;
+
 // リストアイテムのソート用関数
 // 日付の降順ソートで使用する
 static NSInteger dateDescending(id item1, id item2, void *context)
@@ -34,16 +43,6 @@ static NSInteger dateDescending(id item1, id item2, void *context)
     return [date2 compare:date1];
 }
 
-@interface FeedsTableViewController ()
-
-@end
-
-@implementation FeedsTableViewController
-@synthesize itemsArray = _itemsArray;
-@synthesize tableView = _tableView;
-@synthesize adView = _adView;
-@synthesize weakOperation;
-
 // Storyboardファイルからインスタンスが作成されたときに
 // 使われるイニシャライザメソッド
 - (id)initWithCoder:(NSCoder *)aDecoder
@@ -53,8 +52,8 @@ static NSInteger dateDescending(id item1, id item2, void *context)
         
         // インスタンス変数の初期化
         _itemsArray = nil;
-        _ogImages = [NSMutableArray array];
-        _bkmImages = [NSMutableArray array];
+        ogImages = [NSMutableArray array];
+        bkmImages = [NSMutableArray array];
     }
     return self;
 }
@@ -63,14 +62,6 @@ static NSInteger dateDescending(id item1, id item2, void *context)
 {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
-    self.adView.requiredContentSizeIdentifiers = [NSSet setWithObjects:ADBannerContentSizeIdentifierPortrait, ADBannerContentSizeIdentifierLandscape, nil];
-
     // デフォルトの通知センターを取得する
     NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
     
@@ -88,7 +79,6 @@ static NSInteger dateDescending(id item1, id item2, void *context)
 {
     [self setTableView:nil];
     [self setItemsArray:nil];
-    [self setAdView:nil];
     [self setBanner:nil];
     [self setRefreshButton:nil];
     [self setBannerImageView:nil];
@@ -100,16 +90,6 @@ static NSInteger dateDescending(id item1, id item2, void *context)
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
-}
-
-- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
-{
-    if (UIInterfaceOrientationIsLandscape(toInterfaceOrientation)) {
-        self.adView.currentContentSizeIdentifier = ADBannerContentSizeIdentifierLandscape;
-    }
-    else {
-        self.adView.currentContentSizeIdentifier = ADBannerContentSizeIdentifierPortrait;
-    }
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -161,21 +141,21 @@ static NSInteger dateDescending(id item1, id item2, void *context)
     [self reloadNavBarTitleWithString:keywordPlainString0];
     
     // 「読込中」のアラートビューを表示する
-    _progressAlertView = [[UIAlertView alloc] initWithTitle:@"読み込んでいます"
+    progressAlertView = [[UIAlertView alloc] initWithTitle:@"読み込んでいます"
                                                         message:@"\n\n"
                                                        delegate:self
                                               cancelButtonTitle:@"キャンセル"
                                               otherButtonTitles:nil];
-    _progressView = [[UIProgressView alloc]
+    progressView = [[UIProgressView alloc]
                      initWithFrame:CGRectMake(30.0f, 60.0f, 225.0f, 90.0f)];
-    [_progressAlertView addSubview:_progressView];
-    [_progressView setProgressViewStyle: UIProgressViewStyleBar];
-    _timerIncrease = [NSTimer scheduledTimerWithTimeInterval:0.01
+    [progressAlertView addSubview:progressView];
+    [progressView setProgressViewStyle: UIProgressViewStyleBar];
+    timerIncrease = [NSTimer scheduledTimerWithTimeInterval:0.01
                                                       target:self
                                                     selector:@selector(increaseProgressBar)
                                                     userInfo:nil
                                                      repeats:YES];
-    [_progressAlertView show];
+    [progressAlertView show];
     
     NSBlockOperation *operation = [[NSBlockOperation alloc] init];
     weakOperation = operation;
@@ -253,8 +233,8 @@ static NSInteger dateDescending(id item1, id item2, void *context)
              * 検索結果を整えて表示する
              */
             // テーブル更新
-            [_timerIncrease invalidate];
-            [_progressAlertView dismissWithClickedButtonIndex:0 animated:YES];
+            [timerIncrease invalidate];
+            [progressAlertView dismissWithClickedButtonIndex:0 animated:YES];
             [self.tableView reloadData];
             
             // テーブルの一番上へ
@@ -295,8 +275,8 @@ static NSInteger dateDescending(id item1, id item2, void *context)
     }];
     
     // 別スレッドを立てる
-    _queue = [[NSOperationQueue alloc] init];
-    [_queue addOperation:operation];
+    queue = [[NSOperationQueue alloc] init];
+    [queue addOperation:operation];
         
 }
 
@@ -462,7 +442,7 @@ static NSInteger dateDescending(id item1, id item2, void *context)
     self.parser = [[RSSParser alloc] init];
 
     // URLから読み込む
-    if ([_parser parseContentsOfURL:url progressView:_progressView fileName:fileName performer:performer]) {
+    if ([_parser parseContentsOfURL:url progressView:progressView fileName:fileName performer:performer]) {
         
         // 記事を読み込む
         [newArray addObjectsFromArray:[_parser entries]];
@@ -576,26 +556,12 @@ static NSInteger dateDescending(id item1, id item2, void *context)
     return YES;
 }
 
-- (void)bannerViewDidLoadAd:(ADBannerView *)banner
-{
-    if (self.adView.hidden) {
-        self.adView.hidden = NO;
-    }
-}
-
-- (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error
-{
-    if (self.adView.hidden == NO) {
-        self.adView.hidden = YES;
-    }
-}
-
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    if (alertView == _progressAlertView) {
+    if (alertView == progressAlertView) {
         [weakOperation cancel];
     }
-    else if (alertView == _infoAlertView && buttonIndex == 0) {
+    else if (alertView == infoAlertView && buttonIndex == 0) {
         [[UIApplication sharedApplication] openURL: [NSURL URLWithString:URLPayed]];
     }
 }
@@ -611,9 +577,9 @@ static NSInteger dateDescending(id item1, id item2, void *context)
 
 -(void)increaseProgressBar
 {
-    float progress = _progressView.progress;
+    float progress = progressView.progress;
     if (progress < 0.9) {
-        _progressView.progress += 0.001;
+        progressView.progress += 0.001;
     }
     else
     {
@@ -621,7 +587,7 @@ static NSInteger dateDescending(id item1, id item2, void *context)
         [self performSelector:@selector(judgeServerAlive) withObject:nil afterDelay:20.0];
 
         // タイマーは止める
-        [_timerIncrease invalidate];
+        [timerIncrease invalidate];
     }
 }
 
@@ -629,9 +595,9 @@ static NSInteger dateDescending(id item1, id item2, void *context)
 {
     // もしまったく応答がなければあきらめる
     if (_parser.realProgress == 0) {
-        _progressView.progress = 0.0;
-        [_timerDecrease invalidate];
-        [_progressAlertView dismissWithClickedButtonIndex:0 animated:YES];
+        progressView.progress = 0.0;
+        [timerDecrease invalidate];
+        [progressAlertView dismissWithClickedButtonIndex:0 animated:YES];
         
         UIAlertView *alertView = [[UIAlertView alloc] init];
         alertView.title = @"ネットワークに問題があるか、サーバーが混雑しています。場所・時間を変えるなどして再度お試しください。";

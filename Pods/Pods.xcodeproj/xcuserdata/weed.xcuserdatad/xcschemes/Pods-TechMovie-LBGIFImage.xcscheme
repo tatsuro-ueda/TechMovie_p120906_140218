@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "0A7E4C83B0B149DFB422FD29"
-               BuildableName = "libPods-TechMoviePlus-LBGIFImage.a"
-               BlueprintName = "Pods-TechMoviePlus-LBGIFImage"
+               BlueprintIdentifier = "B6CA9B9DC7B74883A3376180"
+               BuildableName = "libPods-TechMovie-LBGIFImage.a"
+               BlueprintName = "Pods-TechMovie-LBGIFImage"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
