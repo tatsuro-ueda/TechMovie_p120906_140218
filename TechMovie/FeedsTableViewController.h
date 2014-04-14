@@ -18,11 +18,9 @@
 {
     NSMutableArray  *ogImages;
     NSMutableArray  *bkmImages;
-    UIProgressView  *progressView;
-    UIAlertView     *progressAlertView;
+    UIAlertView     *parsingAlertView;
     NSOperationQueue *queue;
     UIAlertView     *alertViewInvitation;
-    NSTimer         *timerIncrease;
     NSTimer         *timerDecrease;
     UIAlertView     *infoAlertView;
 }

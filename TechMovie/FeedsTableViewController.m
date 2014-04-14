@@ -141,21 +141,12 @@ static NSInteger dateDescending(id item1, id item2, void *context)
     [self reloadNavBarTitleWithString:keywordPlainString0];
     
     // 「読込中」のアラートビューを表示する
-    progressAlertView = [[UIAlertView alloc] initWithTitle:@"読み込んでいます"
+    parsingAlertView = [[UIAlertView alloc] initWithTitle:@"読み込んでいます"
                                                         message:@"\n\n"
                                                        delegate:self
                                               cancelButtonTitle:@"キャンセル"
                                               otherButtonTitles:nil];
-    progressView = [[UIProgressView alloc]
-                     initWithFrame:CGRectMake(30.0f, 60.0f, 225.0f, 90.0f)];
-    [progressAlertView addSubview:progressView];
-    [progressView setProgressViewStyle: UIProgressViewStyleBar];
-    timerIncrease = [NSTimer scheduledTimerWithTimeInterval:0.01
-                                                      target:self
-                                                    selector:@selector(increaseProgressBar)
-                                                    userInfo:nil
-                                                     repeats:YES];
-    [progressAlertView show];
+    [parsingAlertView show];
     
     NSBlockOperation *operation = [[NSBlockOperation alloc] init];
     weakOperation = operation;
@@ -233,8 +224,7 @@ static NSInteger dateDescending(id item1, id item2, void *context)
              * 検索結果を整えて表示する
              */
             // テーブル更新
-            [timerIncrease invalidate];
-            [progressAlertView dismissWithClickedButtonIndex:0 animated:YES];
+            [parsingAlertView dismissWithClickedButtonIndex:0 animated:YES];
             [self.tableView reloadData];
             
             // テーブルの一番上へ
@@ -251,17 +241,17 @@ static NSInteger dateDescending(id item1, id item2, void *context)
             // performselectoer:judgeServerAliveをキャンセルする
             [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(judgeServerAlive) object: nil];
 
-            UIAlertView *alertView = [[UIAlertView alloc] init];
+            UIAlertView *av = [[UIAlertView alloc] init];
             if (numNewEntry > 0) {
-                alertView.title = [NSString stringWithFormat:@"%d 件の新着動画があります",numNewEntry];
+                av.title = [NSString stringWithFormat:@"%d 件の新着動画があります",numNewEntry];
             }
             else {
-                alertView.title = @"新着動画はありません";
+                av.title = @"新着動画はありません";
             }
-            alertView.message = nil;
-            alertView.delegate = self;
-            [alertView addButtonWithTitle:@"OK"];
-            [alertView show];
+            av.message = nil;
+            av.delegate = self;
+            [av addButtonWithTitle:@"OK"];
+            [av show];
             
             /*
             // Google Analytics
@@ -442,7 +432,7 @@ static NSInteger dateDescending(id item1, id item2, void *context)
     self.parser = [[RSSParser alloc] init];
 
     // URLから読み込む
-    if ([_parser parseContentsOfURL:url progressView:progressView fileName:fileName performer:performer]) {
+    if ([self.parser parseContentsOfURL:url fileName:fileName performer:performer]) {
         
         // 記事を読み込む
         [newArray addObjectsFromArray:[_parser entries]];
@@ -507,14 +497,6 @@ static NSInteger dateDescending(id item1, id item2, void *context)
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
-    
     // データソースからURLを取得する
     NSURL *url;
     url = [self urlAtIndex:indexPath.row];
@@ -544,6 +526,14 @@ static NSInteger dateDescending(id item1, id item2, void *context)
     [self requestTableData];
 }
 
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (alertView == parsingAlertView)
+    {
+        [weakOperation cancel];
+    }
+}
+
 - (IBAction)jumpToPaidApp:(id)sender {
     NSInteger numAct = [[NSUserDefaults standardUserDefaults] integerForKey:@"numAct"];
     if (5 < numAct) {
@@ -556,16 +546,6 @@ static NSInteger dateDescending(id item1, id item2, void *context)
     return YES;
 }
 
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-    if (alertView == progressAlertView) {
-        [weakOperation cancel];
-    }
-    else if (alertView == infoAlertView && buttonIndex == 0) {
-        [[UIApplication sharedApplication] openURL: [NSURL URLWithString:URLPayed]];
-    }
-}
-
 - (void)reloadNavBarTitleWithString:(NSString *)title
 {
     // タブバーのタイトルを変える
@@ -575,36 +555,16 @@ static NSInteger dateDescending(id item1, id item2, void *context)
     self.navigationItem.title = [NSString stringWithFormat:@"「%@」の新着動画", title];
 }
 
--(void)increaseProgressBar
-{
-    float progress = progressView.progress;
-    if (progress < 0.9) {
-        progressView.progress += 0.001;
-    }
-    else
-    {
-        // 90%になったら、サーバーからの返答の有無を20秒後に判断する
-        [self performSelector:@selector(judgeServerAlive) withObject:nil afterDelay:20.0];
-
-        // タイマーは止める
-        [timerIncrease invalidate];
-    }
-}
-
 - (void)judgeServerAlive
 {
     // もしまったく応答がなければあきらめる
     if (_parser.realProgress == 0) {
-        progressView.progress = 0.0;
-        [timerDecrease invalidate];
-        [progressAlertView dismissWithClickedButtonIndex:0 animated:YES];
-        
-        UIAlertView *alertView = [[UIAlertView alloc] init];
-        alertView.title = @"ネットワークに問題があるか、サーバーが混雑しています。場所・時間を変えるなどして再度お試しください。";
-        alertView.message = nil;
-        alertView.delegate = self;
-        [alertView addButtonWithTitle:@"了解"];
-        [alertView show];
+        UIAlertView *av = [[UIAlertView alloc] init];
+        av.title = @"ネットワークに問題があるか、サーバーが混雑しています。場所・時間を変えるなどして再度お試しください。";
+        av.message = nil;
+        av.delegate = self;
+        [av addButtonWithTitle:@"了解"];
+        [av show];
 
         [weakOperation cancel];
     }

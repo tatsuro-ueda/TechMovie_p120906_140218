@@ -36,9 +36,8 @@
 
 // URLからRSSファイルを読み込む
 // ここではRSS2.0のみ対応する
-- (BOOL)parseContentsOfURL:(NSURL *)url progressView:(UIProgressView *)progressView fileName:(NSString *)fileName performer:(id)performer
+- (BOOL)parseContentsOfURL:(NSURL *)url fileName:(NSString *)fileName performer:(id)performer
 {
-    _progressView = progressView;
     _performer = performer;
     BOOL ret = NO;
     
@@ -122,16 +121,6 @@ didStartElement:(NSString *)elementName
     // エレメント位置を把握するためにスタックにエレメント名を追加する
     [self.elementStack addObject:elementName];
     
-    // プログレスビューの更新
-    // メインスレッドに戻す
-    NSOperationQueue *mainQueue = [NSOperationQueue mainQueue];
-    [mainQueue addOperationWithBlock:^{
-        _realProgress = (CGFloat)[parser lineNumber] / (CGFloat)_totalLines;
-        if (_progressView.progress < _realProgress) {
-            _progressView.progress = _realProgress;
-        }
-    }];
-    
     if ([elementName isEqualToString:@"enclosure"])
     /*
      vimeoのURLはenclosureタグのurl属性に書かれている
@@ -186,16 +175,6 @@ didStartElement:(NSString *)elementName
             [self currentEntry].text = str;
         }
     }
-
-    // プログレスビューの更新
-    // メインスレッドに戻す
-    NSOperationQueue *mainQueue = [NSOperationQueue mainQueue];
-    [mainQueue addOperationWithBlock:^{
-        _realProgress = (CGFloat)[parser lineNumber] / (CGFloat)_totalLines;
-        if (_progressView.progress < _realProgress) {
-            _progressView.progress = _realProgress;
-        }
-    }];
 }
 
 // エレメントスタックをファイルパスのような文字列にする
@@ -335,16 +314,6 @@ didStartElement:(NSString *)elementName
         }
 #endif
     }
-    
-    // プログレスビューの更新
-    // メインスレッドに戻す
-    NSOperationQueue *mainQueue = [NSOperationQueue mainQueue];
-    [mainQueue addOperationWithBlock:^{
-        _realProgress = (CGFloat)[parser lineNumber] / (CGFloat)_totalLines;
-        if (_progressView.progress < _realProgress) {
-            _progressView.progress = _realProgress;
-        }
-    }];
 }
 
 // RSS2.0の表記方法で書かれた日時からオブジェクトを取得する

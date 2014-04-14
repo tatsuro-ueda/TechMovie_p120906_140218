@@ -11,7 +11,6 @@
 @class RSSEntry;
 @interface RSSParser : NSObject<NSXMLParserDelegate>
 {
-    UIProgressView  *_progressView;
     int             _totalLines;
     BOOL            _newEntryComes;
     id              _performer;
@@ -28,7 +27,7 @@
 @property NSArray *oldFeeds;
 
 
-- (BOOL)parseContentsOfURL:(NSURL *)url progressView:(UIProgressView *)progressView fileName:(NSString *)fileName performer:(id)performer;
+- (BOOL)parseContentsOfURL:(NSURL *)url fileName:(NSString *)fileName performer:(id)performer;
 - (NSDate *)pubDateWithString:(NSString *)string;
 
 @end
